@@ -1,0 +1,37 @@
+BeginZE D:/ON-WORK/ERMES/ERMES-20.0.5-2026-10-19/Examples/Microwave_Filter.gid/Microwave_Filter.vv
+   x -0.0435489043593406677 0.204273849725723267
+   y 0.0764696225523948669 -0.100417040288448334
+   z -0.274246722459793091 0.264086693525314331
+   e 0.0884433314204216003
+   v -0.343973278999328613 0.170201554894447327 0.375837177038192749
+   r -0.843481004238128662
+   m 0.659555733203887939 0.51693350076675415 -0.545679450035095215 0 -0.751112639904022217 0.480857640504837036 -0.452333718538284302 0 0.0285676810890436172 0.708205997943878174 0.705427646636962891 0 0 0 0 1
+   c 0.0812788978219032288 -0.0114299999549984932 0.00508000003173947334
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 1
+   LightVector -19.9186992645263672 -11.739100456237793 148.406005859375 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE D:/ON-WORK/ERMES/ERMES-20.0.5-2026-10-19/Examples/Microwave_Filter.gid/Microwave_Filter.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

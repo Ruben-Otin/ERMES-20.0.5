@@ -1,0 +1,270 @@
+PROBLEM DATA
+BOOK: Solving_parameters
+TITLE: General
+QUESTION: Problem_mode#CB#(Full_wave,Electrostatic,Cold_plasma)
+VALUE: Full_wave
+HELP: Available problem modes:\n- 'Full_wave': for solving problems in frequency domain with IHL materials.\n- 'Electrostatic': for solving electrostatic problems.\n- 'Cold_plasma': for solving time-harmonic problems with a cold plasma.
+QUESTION: Symmetry#CB#(3D,XY,ZZ,AY)
+VALUE: 3D
+HELP: Symmetry conditions applied to the main field across the entire problem \ndomain. The main field can be either E or A, depending on the selected \nFEM formulation. Available options are:\n\n- '3D': for solving a general three-dimensional problem.\n\n- 'XY': for solving only the X- and Y-components of the main field, while \n   setting the Z-component to zero throughout the entire domain. This \n   symmetry is only available in "Full_wave" mode and is not supported \n   for edge element formulations.\n\n- 'ZZ': for solving only the Z-component of the main field, while setting \n   the X- and Y-component to zero throughout the entire domain. The \n   main field is set to zero on all PEC surfaces. This symmetry is only available \n   in "Full_wave" mode and is not supported for edge element formulations.\n\n- 'AY': for solving an axisymmetric problem around the Y axis, with the \n   angular and radial components of the main field set to zero throughout \n   the entire domain. The main field is set to zero on all PEC surfaces. This \n   symmetry is only available in "Full_wave" mode and is not supported \n   for edge element formulations.\n
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: _Element_type#CB#(EDG_1st,EDG_2nd,RME_1st,RME_2nd,LL2P_3sb)
+VALUE: RME_1st
+HELP: FEM formulation and element order:\n- 'EDG_1st': double-curl edge formulation with 1st order elements.\n- 'EDG_2nd': double-curl edge formulation with 2nd order elements.\n- 'RME_1st': regularized Maxwell equations method with 1st order nodal elements.\n- 'RME_2nd': regularized Maxwell equations method with 2nd order nodal elements.\n- 'LL2P_3sb': local L2 projection method with 1st order nodal elements enriched with\n    three surface bubbles plus an inner volumetric bubble.
+QUESTION: Potentials#CB#(On,Off)
+VALUE: On
+HELP: Selects between two different versions of the chosen FEM formulation:\n- 'On': the problem is solved using the A-V potentials version.\n- 'Off': the problem is solved using the E-field version.
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: RME_stabilize#CB#(On,Off)
+VALUE: On
+HELP: Maintains or removes the divergence term throughout the entire domain \nin the regularized and LL2P formulations:\n- 'On': maintains the divergence term.\n- 'Off': removes the divergence term throughout the entire domain.
+QUESTION: EDG_stabilize#CB#(On,Off)
+VALUE: Off
+HELP: Adds a stabilization term to the double-curl formulation:\n- 'On': the problem is solved with the stabilized term.\n- 'Off': the problem is solved without the stabilization term.
+QUESTION: LL2P_stabilize#CB#(On,Off)
+VALUE: Off
+HELP: Adds a stabilization term to the LL2P formulation:\n- 'On': the problem is solved with the stabilized term.\n- 'Off': the problem is solved without the stabilization term.
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: Results_mode#CB#(Nodes,GP_1,GP_4)
+VALUE: Nodes
+HELP: Selects between three different results visualization modes:\n- 'Nodes': the results are given at the nodes.\n- 'GP_1': the results are given at the central Gauss points of the elements.\n- 'GP_4': the results are given at four internal Gauss points of the elements.
+QUESTION: LL2P_smooth#CB#(On,Off)
+VALUE: Off
+HELP: Smooths the solution of the LL2P method. This option is useful for mitigating numerical \noscillations that can arise because of oversampling when using bubble elements:\n- 'On': the smoothing is applied to the LL2P solution.\n- 'Off': the smoothing is not applied to the LL2P solution.
+QUESTION: Solving_mode#CB#(Release,Debug,Read)
+VALUE: Release
+HELP: Selects between three different solving modes:\n\n- 'Release': the problem is solved normally.\n\n- 'Debug': the problem is not solved, but some results are generated for debugging purposes. \n    This option is useful for verifying that the cold plasma is properly set up or ensuring that \n    the contact elements are well defined.\n\n- 'Read': the problem is not solved, but new results are generated after reading the "Vector_Xo.bin" \n    file calculated previously. This option will create a new results file and is useful for adding \n    results that were previously overlooked.\n
+TITLE: Geometry
+QUESTION: Length_units#CB#(m,dm,cm,mm,custom)
+VALUE: m
+HELP: Multiplicative factor applied to all length values.
+DEPENDENCIES: (custom,RESTORE,custom_L_factor,#CURRENT#)              (#DEFAULT#,HIDE,custom_L_factor,#CURRENT#)
+QUESTION: custom_L_factor
+VALUE: 1.0
+HELP: Custom multiplicative factor applied to all length values.
+QUESTION: Geo_error_tol#CB#(0.0,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7,1e-8,1e-9,1e-10,1e-11,1e-12)
+VALUE: 1e-9
+HELP: Error tolerance for GiD geometric objects. \nThis setting can help ensure accurate axis \nalignment in axisymmetric simulations.
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: Normals_type#CB#(Area_weighted,Geometric_average)
+VALUE: Area_weighted
+HELP: Criteria for computing the normals on PEC, PMC, and contact surfaces: \n\n- 'Area_weighted': normals are calculated using a surface-weighted \n    average. \n\n- 'Geometric_average': normals are calculated as the average of the \n    surrounding element normals, ignoring their relative sizes.\n
+QUESTION: AV_continuity#CB#(On,Off)
+VALUE: On
+HELP: Allows for continuous or discontinuous normal components of the vector potential A \nacross material interfaces: \n- 'On': the normal component of A is continuous across interfaces. \n- 'Off': the normal component of A can be discontinuous across interfaces.
+QUESTION: LL2P_keep_div#CB#(On,Off)
+VALUE: On
+HELP: Preserves or removes the divergence term of the LL2P formulation inside the ungauged layers \nwhen collapsing bubbles with the 'Singularities' Dirichlet condition: \n\n- 'On': the divergence term is preserved inside the ungauged layers. \n- 'Off': the divergence term is removed inside the ungauged layers. \n\nThis condition applies only to ungauged layers and is independent of the 'RME stabilize' setting, \nwhich can remove the divergence term throughout the entire domain.
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: Contact_detect#CB#(Manual,Ignore)
+VALUE: Manual
+HELP: This setting provides the option to consider or disregard meshed \ncontact volumes in the analysis: \n- 'Manual': all the meshed contact volumes are considered.\n- 'Ignore'  : all the contact volumes are ignored.
+QUESTION: PBC_symmetry#CB#(Periodic,Cyclic)
+VALUE: Periodic
+HELP: Type of Periodic Boundary Condition (PBC) used in the simulation: \n- 'Periodic': the right face is parallel to the left face.\n- 'Cyclic': the right face is tilted relative to the left face.
+QUESTION: PBC_FB_pha_dif
+VALUE: 0.0
+HELP: Phase difference between front and back PBC surfaces:  \nEfront = Eback * exp( j * PhaseDiff ), with \nPhaseDiff = PhaseFront - PhaseBack in radians.
+QUESTION: PBC_RL_pha_dif
+VALUE: 0.0
+HELP: Phase difference between right and left PBC surfaces:  \nEright = Eleft * exp( j * PhaseDiff ), with \nPhaseDiff = PhaseRight - PhaseLeft in radians.
+TITLE: Import/Export
+QUESTION: Import_Robin_flux#CB#(On,Off)
+VALUE: Off
+HELP: Imports a generic Robin boundary condition from a set of files.  \nThese files must be located in the problem folder and named  \n'Matrix_P_IRBC.bin' and 'Vector_U_IRBC.bin'. An example of how  \nto generate these files is provided in the 'Import_Scripts' folder  \nwithin the 'Documents' directory of this problem type. Two  \noptions are available:  \n\n- 'On': applies the boundary condition defined in the files.  \n\n- 'Off': does not apply the boundary condition.  \n
+QUESTION: Import_J_currents#CB#(On,Off)
+VALUE: Off
+HELP: Imports a volumetric current distribution J from a set of files.  \nThese files must be located in the 'Export_J_Sources' folder  \nwithin the problem directory and follow the naming convention  \n'Jsource-*.dat', where * is an integer index. See the manual for  \nmore details on the files format. Two options are available:  \n\n- 'On': reads all files matching 'Jsource-*.dat'.  \n\n- 'Off': no file is read.  \n
+QUESTION: Import_ele_matrix#CB#(On,Off)
+VALUE: Off
+HELP: Imports volumetric element matrices and vectors from a set  \nof files. These files must be named 'Matrix_K_IVEM.bin' and  \n'Vector_R_IVEM.bin' and must be located within the problem  \nfolder. An example of how to generate these files is provided  \nin the '\\Documents\\Import_Scripts' directory of this problem  \ntype. Two options are available:  \n\n- 'On': imports volumetric element systems from files.  \n\n- 'Off': does not import volumetric element systems.  \n
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: _Export_fields#CB#(On,Off)
+VALUE: Off
+HELP: The complex results for E, H, B and J are saved in individual files within the problem folder 'Fields'. \nThese files store the Cartesian components of the fields at all nodes within the surfaces and volumes \nselected in 'Field_integrals'. Additionally, two more files are saved, providing the list of nodes and \nelements associated with each selected surface and volume. Two options are available: \n\n- 'On': the fields, along with the lists of nodes and elements for each selected surface and volume, \n   are written to separate files in the problem folder 'Fields'. \n\n- 'Off': no files are generated to store the fields data.\n
+QUESTION: Output_format#CB#(Binary,Ascii)
+VALUE: Binary
+HELP: Two possible formats for the results files: \n\n- 'Binary': a single binary file '.flavia.res' is written, containing \n   both results and mesh data. This format saves disk space \n   and is faster to read by GiD, but requires custom scripts for \n   human user interpretation. \n\n- 'Ascii': two ASCII files are written: '.res' for results and '.msh' \n   for mesh data. These files can be easily read by the user, but \n   they are less space-efficient and slower to read by GiD.\n
+TITLE: Frequency
+QUESTION: Angular_frequency_mode#CB#(0,1)
+VALUE: 1
+HELP: - If this option is selected, the problem is solved for one angular \n   frequency w = 2*pi*f, being f the value provided in 'Frequency'. \n\n- All the fields are assumed to be time-harmonic. \n\n- This is the default mode. \n
+QUESTION: Frequency
+VALUE: 50
+HELP: Problem frequency in Hz.
+QUESTION: ____________________________________________#CB#(_)
+VALUE: 
+QUESTION: Complex_frequency_mode#CB#(0,1)
+VALUE: 0
+HELP: - If this option is selected, the problem is solved for one complex frequency \n   s = a + ib, being a = 'Real_s' and b = 'Imag_s'. \n\n- All the fields are assumed to vary with time as in F(r,t) = Real[ Fc(r)*exp(-st) ]. \n\n- This option overrides 'Angular_frequency_mode', is limited to the 'Full_wave' \n   mode, and only allows the use of Dirichlet and quasi-static Robin boundary \n   conditions. \n
+QUESTION: Real_s
+VALUE: 0.0
+HELP: Real component of s.
+QUESTION: Imag_s
+VALUE: 1.0
+HELP: Imaginary component of s.
+QUESTION: ____________________________________________#CB#(_)
+VALUE: 
+QUESTION: Sweep_frequency_mode#CB#(0,1)
+VALUE: 0
+HELP: - If this option is selected, the problem is solved for a set of angular frequencies within the interval [wi, we], \n   with a step size of ws, being wi = 2*pi*fi, we = 2*pi*fe, and ws = 2*pi*fs. The values of fi, fe, and fs are \n   obtained from the input fields: 'Initial_frequency', 'Final_frequency', and 'Step_frequency', respectively. \n\n- 'Sweep_frequency_mode' takes precedence over 'Angular_frequency_mode' and 'Complex_frequency_mode'. \n\n- Visual post-processing results will not be provided, but '.dat' files containing fields, integrals, and scattering \n   parameters will be saved. \n
+QUESTION: Initial_frequency
+VALUE: 1e9
+HELP: Starting frequency of the frequency sweep (Hz).
+QUESTION: Final_frequency
+VALUE: 3e9
+HELP: Final frequency of the frequency sweep (Hz).
+QUESTION: Step_frequency
+VALUE: 0.1e9
+HELP: Step size (Hz) between two consecutives frequencies.
+TITLE: Solver
+QUESTION: _a)_Solver_type_:_________________________#CB#(_)
+VALUE: 
+QUESTION: Solver#CB#(Quasi_Minimal_Residual,Bi_Conjugate_Gradient,Direct_solver,External_solver)
+VALUE: Quasi_Minimal_Residual
+HELP: Solver type used for solving the linear system: \n\n- The 'Quasi_Minimal_Residual' and the 'Bi_Conjugate_Gradient' are iterative solvers implemented inside \n   ERMES 20.0, whose parameters are specified in 'Internal_solvers_settings'. Although these solvers are \n   characterized by low memory consumption, their convergence may be compromised for certain problems. \n   For faster solving times of ill-conditioned matrices, the 'External_solver' option is recommended instead. \n\n- The 'Direct_solver' is an internal sparse direct solver ( METIS ordering, parallel multifrontal factorization, \n   pivoting and GMRES ). It gives the solution also for ill-conditioned problems where the iterative solvers \n   stagnate ( resonances, low losses, high contrast materials, low frequency A-V ), and works with every \n   matrix format. It uses the 'Processors' of the problem data as threads. Only 'Tolerance' is used from \n   'Internal_solvers_settings' ( final residual check ). The predicted memory is written in the .info file and \n   ERMES stops if it does not fit. For problems larger than the memory of one computer use 'External_solver' \n   ( e.g. PETSc + MUMPS on a cluster ). \n\n- If the 'External_solver' option is selected, the linear system is saved in binary files within the problem folder. \n   In 'Full_wave' and 'Electrostatic' modes, the stiffness matrix will be saved in symmetric format (diagonal and \n   upper diagonal). In 'Cold_plasma' mode, the stiffness matrix will be saved in the same format as specified \n   in 'Cold_plasma' -> 'Problem_settings'. \n\n- Once the matrix and vector are saved, the external solver will be called, using the parameters specified in \n  'External_solvers_settings'. Then, following the termination of the external solver, ERMES 20.0 will be called \n   once more to read the obtained solution and produce result files suitable for visualization. If the textboxes \n   in 'External_solvers settings' are left blank, ERMES 20.0 will end immediately after saving the linear system. \n   The saved system can then be read and solved at a later time. \n\n- The problemtype folder '\\ERMES_20.0.5\\External_Solvers' contains examples demonstrating the use of external \n   solvers, including batch files, documentation, and Python scripts for calling and solving linear systems. \n
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: _b)_Internal_solvers_settings:____#CB#(_)
+VALUE: 
+QUESTION: Processors#CB#(1,2,4,6,8,10,12,14,16,32,64)
+VALUE: 12
+HELP: Number of OpenMP threads used by the iterative solver.
+QUESTION: Tolerance#CB#(1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7,1e-8,1e-9,1e-10,1e-11,1e-12,custom)
+VALUE: 1e-6
+HELP: Convergence is achieved when ||Ax-b||/||b|| falls below the specified tolerance.
+DEPENDENCIES: (custom,RESTORE,custom_Tol,#CURRENT#)              (#DEFAULT#,HIDE,custom_Tol,#CURRENT#)
+QUESTION: custom_Tol
+VALUE: 0.5e-6
+HELP: Convergence is achieved when ||Ax-b||/||b|| falls below the specified tolerance.
+QUESTION: Preconditioner#CB#(Diagonal,Identity)
+VALUE: Diagonal
+HELP: Internal solver preconditioner.
+QUESTION: Max_iterations#CB#(1e3,1e4,1e5,1e6,custom)
+VALUE: 1e6
+HELP: Maximum number of iterations permitted.
+DEPENDENCIES: (custom,RESTORE,custom_Max_it,#CURRENT#)              (#DEFAULT#,HIDE,custom_Max_it,#CURRENT#)
+QUESTION: custom_Max_it
+VALUE: 1e6
+HELP: Maximum number of iterations permitted.
+QUESTION: Iteration_step#CB#(50,100,250,500,1000,custom)
+VALUE: 250
+HELP: The residual ||Ax-b||/||b|| will be printed to the '.info' file at the conclusion of \neach 'Iteration_step'. If 'Results_in_file' -> 'Every_step' is selected, the solution \nis saved in the file 'Vector_Xo.bin' every 'Iteration_step'.
+DEPENDENCIES: (custom,RESTORE,custom_It_step,#CURRENT#)              (#DEFAULT#,HIDE,custom_It_step,#CURRENT#)
+QUESTION: custom_It_step
+VALUE: 250
+HELP: The residual ||Ax-b||/||b|| will be printed to the '.info' file at the conclusion of \neach 'Iteration_step'. If 'Results_in_file' -> 'Every_step' is selected, the solution \nis saved in the file 'Vector_Xo.bin' every 'Iteration_step'.
+QUESTION: Initial_guess#CB#(Nil_vector,Read_file)
+VALUE: Nil_vector
+HELP: A solution file is read and used as an initial guess.
+QUESTION: Results_in_file#CB#(No,Every_step,Final_step)
+VALUE: Final_step
+HELP: Saves the solution at 'Every_step' or only at the 'Final_step'.
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: _c)_External_solvers_settings:___#CB#(_)
+VALUE: 
+QUESTION: Solver_executable
+VALUE: bash
+HELP: External solver executable or script to call it.
+QUESTION: Solver_parameters
+VALUE: ../PETSc/ERMES2PETSc.sh
+HELP: Input parameters for the external solver.
+BOOK: Results
+TITLE: Frequency_domain
+QUESTION: E#CB#(0,1)
+VALUE: 1
+HELP: Time-harmonic electric field.
+QUESTION: H#CB#(0,1)
+VALUE: 0
+HELP: Time-harmonic magnetic field.
+QUESTION: B#CB#(0,1)
+VALUE: 1
+HELP: Time-harmonic magnetic flux density.
+QUESTION: J#CB#(0,1)
+VALUE: 1
+HELP: Time-harmonic total current density: Jtotal = Jimposed + sigma * E.
+QUESTION: Poynting_vector#CB#(0,1)
+VALUE: 0
+HELP: Time averaged Poynting vector: < S > = 0.5 * Real( E x conj( H ) ).
+QUESTION: Joule_heating#CB#(0,1)
+VALUE: 1
+HELP: Time averaged Joule heating for IHL materials: < Q > = 0.5 * ( sigma + w * Imag( eps ) ) * | E |^2.
+QUESTION: Lorentz_force#CB#(0,1)
+VALUE: 0
+HELP: Time averaged Lorentz force: < F > = 0.5 * Real( J x conj( B ) ).
+TITLE: Time_domain
+QUESTION: Initial_time
+VALUE: Time step
+HELP: Initial time for time domain animations.
+QUESTION: Final_time
+VALUE: T
+HELP: Final time for time domain animations.
+QUESTION: Time_step
+VALUE: T/32
+HELP: Time step for time domain animations.
+QUESTION: E(t)#CB#(0,1)
+VALUE: 0
+HELP: Time-harmonic electric field in time domain.
+QUESTION: H(t)#CB#(0,1)
+VALUE: 0
+HELP: Time-harmonic magnetic field in time domain.
+QUESTION: B(t)#CB#(0,1)
+VALUE: 1
+HELP: Time-harmonic magnetic flux density in time domain.
+QUESTION: J(t)#CB#(0,1)
+VALUE: 1
+HELP: Time-harmonic total current density in time domain.
+TITLE: Cold_plasma
+QUESTION: Electron_density#CB#(0,1)
+VALUE: 1
+HELP: Electron density profile.
+QUESTION: External_B_field#CB#(0,1)
+VALUE: 1
+HELP: External B field.
+QUESTION: Permittivity_tensor#CB#(0,1)
+VALUE: 0
+HELP: Real part of the cold plasma permittivity tensor components (S, P, D, R, and L).
+QUESTION: E_perpendicular#CB#(0,1)
+VALUE: 0
+HELP: Projection of the time-harmonic electric field on the direction perpendicular to the applied B field.
+QUESTION: E_parallel#CB#(0,1)
+VALUE: 0
+HELP: Projection of the time-harmonic electric field on the direction parallel to the applied B field.
+QUESTION: E_perpendicular_(t)#CB#(0,1)
+VALUE: 0
+HELP: Perpendicular electric field in time domain.
+QUESTION: E_parallel_(t)#CB#(0,1)
+VALUE: 0
+HELP: Parallel electric field in time domain.
+TITLE: Electrostatic
+QUESTION: Electrostaic_potential#CB#(0,1)
+VALUE: 1
+HELP: Electrostatic electric potential in Volts.
+QUESTION: Electrostatic_E_field#CB#(0,1)
+VALUE: 1
+HELP: Electrostatic electric field ( E = -grad(V) ).
+QUESTION: Electrostatic_current_density#CB#(0,1)
+VALUE: 1
+HELP: Electrostatic current density ( J = sigma * E ).
+QUESTION: Electrostatic_Joule_heating#CB#(0,1)
+VALUE: 1
+HELP: Electrostatic Joule heating ( Q = sigma * | E |^2 ).
+QUESTION: Export_electrostatic_currents#CB#(0,1)
+VALUE: 0
+HELP: Writes the electrostatic current density to the file "Jsource-(Export_Id).dat".
+QUESTION: Export__Id
+VALUE: 1
+HELP: Current source export file Id.
+QUESTION: Export_Ph
+VALUE: 0
+HELP: The exported current density will be multiplied by exp(i*Export_Ph) when imported.
+END PROBLEM DATA
+INTERVAL DATA
+END INTERVAL DATA

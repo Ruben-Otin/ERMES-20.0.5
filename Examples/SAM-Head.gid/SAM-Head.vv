@@ -1,0 +1,37 @@
+BeginZE D:/ON-WORK/ERMES/ERMES-20.0.5-2026-10-19/Examples/SAM-Head.gid/SAM-Head.vv
+   x -0.276822775602340698 0.30227699875831604
+   y 0.214597404003143311 -0.198863744735717773
+   z -0.700394392013549805 0.669759035110473633
+   e 0.206730574369430542
+   v 0.22234344482421875 -0.304215908050537109 -0.0743362382054328918
+   r -0.923303961753845215
+   m 0.803853631019592285 -0.272550702095031738 0.528711140155792236 0 0.00198905309662222862 0.890075027942657471 0.455809712409973145 0 -0.594823837280273438 -0.365352630615234375 0.716032147407531738 0 0 0 0 1
+   c 2.21348618651973084e-05 0.00472317589446902275 0.0153176784515380859
+   pd 0
+   pno 0
+   pfo 0
+   pf 4
+   pv 0
+   NowUse 0
+   DrawingType 1
+   LightVector -3.14223003387451172 10.2615995407104492 149.5780029296875 0
+   OGLShadow(UseShadows) 0
+   OGLShadow(RenderMode) RenderNice
+   OGLShadow(ShadowBias) -0.002
+   OGLShadow(AmbientShadows) 1
+   OGLShadow(UseFBO) 0
+   OGLShadow(FBOSize) 2048
+   OGLShadow(DimmedLightFactor) 0.02
+   OGLStereo(UseStereo) 0
+   OGLStereo(RelativeEyeDistance) 1
+   OGLStereo(FlipEyes) 0
+   OGLStereo(StereoMode) AnaglyphColors
+   OGLStereo(EyeDistance) 0.075
+   OGLStereo(LeftEyeDistance) 1 0 0 1
+   OGLStereo(RightEyeDistance) 0 1 1 1
+EndZE D:/ON-WORK/ERMES/ERMES-20.0.5-2026-10-19/Examples/SAM-Head.gid/SAM-Head.vv
+
+BeginMirror
+   Mirror 0 Angle 0.0 AngleFake -15.0 SizeFactor 2.0 HeightOffset 0.25 Color #d9e5f24d Backlight Off EdgeStyle No Type Scene DrawMode Mirror
+EndMirror
+

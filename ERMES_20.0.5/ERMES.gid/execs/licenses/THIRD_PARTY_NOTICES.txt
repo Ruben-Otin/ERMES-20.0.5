@@ -1,0 +1,23 @@
+ERMES 20.0.5 - third-party components in the executables
+==========================================================
+
+ERMES is open source ( see the license folder of the source code ). The executables in
+execs/ also contain the following third-party code:
+
+1) METIS and GKlib ( Linux and Windows executables )
+   Copyright 1995-2018, Regents of the University of Minnesota.
+   Apache License 2.0: METIS_LICENSE.txt, GKlib_LICENSE.txt.
+   GKlib includes a few files derived from other projects, under their own licenses
+   ( LGPL-2.1-or-later sort templates from the GNU C Library, BSD-3-Clause random number
+   generator ): see GKlib_LICENSES.md, LGPL-2.1.txt and GKlib_BSD-3-Clause-MT.txt.
+   Sources: https://github.com/KarypisLab/METIS and https://github.com/KarypisLab/GKlib
+
+2) Linux executable ( statically linked ): GNU C Library ( LGPL-2.1-or-later, LGPL-2.1.txt ),
+   GNU C++ library and GNU OpenMP runtime ( GPL-3.0 with the GCC Runtime Library Exception,
+   which allows their use in programs under any license ).
+   The complete ERMES source code and its Makefile are distributed with ERMES, so the
+   executable can be rebuilt and relinked with other versions of these libraries
+   ( see ERMES_CPP_20.0.5/unix/README.txt ).
+
+3) Windows executable: Microsoft Visual C++ runtime ( static ) and vcomp140.dll
+   ( Microsoft Visual C++ Redistributable, redistributable under the Visual Studio license ).

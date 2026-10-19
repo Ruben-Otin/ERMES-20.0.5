@@ -1,0 +1,105 @@
+\documentclass[a4paper,english,11pt,twoside,openright]{Contents/Styles/tesisupc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% ERMES 20.0.5 user manual
+%
+% Ruben Otin
+% UK Atomic Energy Authority
+%
+% E-mail: ruben.0tin@ukaea.uk
+% Oxford (UK) - October 2026
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{color}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{makeidx}
+\usepackage{amsmath,amssymb}
+\usepackage{times}
+\usepackage{dcounter}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{eso-pic}
+\usepackage{bm}
+\usepackage[obeyspaces]{url}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\ifx\pdfoutput\undefined
+\usepackage{graphicx}
+\else
+\usepackage[pdftex]{graphicx}
+\fi
+
+% Begin document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Cover %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Contents/Cover.tex}
+
+% Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+% Summary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Summary}\label{chSummary}
+
+\input{Contents/Summary.tex}
+
+% Chapter 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}\label{chIntroduction}
+
+\input{Contents/Ch1-Introduction.tex}
+
+% Chapter 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Installation}\label{chInstallation}
+
+\input{Contents/Ch2-Installation.tex}
+
+% Chapter 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Pre-process}\label{chPreProcess}
+
+\input{Contents/Ch3-Preprocess.tex}
+
+% Chapter 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Post-process}\label{chPostProcess}
+
+\input{Contents/Ch4-Postprocess.tex}
+
+% Appendixes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+% Appendix A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Electromagnetic theory}\label{chEMTheory}
+
+\input{Contents/A-EMTheory.tex}
+
+% Appendix B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Finite element formulations}\label{chFEMForms}
+
+\input{Contents/B-FEMForms.tex}
+
+% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+
+\bibliography{Contents/Bibliography}
+
+% End document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

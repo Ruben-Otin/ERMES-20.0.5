@@ -1,0 +1,188 @@
+BOOK:Dirichlet_conditions
+NUMBER: 1 CONDITION: Point_Voltage_Full_wave
+CONDTYPE: over points
+CONDMESHTYPE: over nodes
+QUESTION: Module_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage module over points.
+QUESTION: Phase_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage phase over points.
+END CONDITION
+NUMBER: 2 CONDITION: Point_Voltage_Electrostatic
+CONDTYPE: over points
+CONDMESHTYPE: over nodes
+QUESTION: Voltage
+VALUE: 0.0
+HELP: Electrostatic voltage over points.
+END CONDITION
+NUMBER: 3 CONDITION: Point_Singularity
+CONDTYPE: over points
+CONDMESHTYPE: over nodes
+QUESTION: Ungaged_layers#CB#(1,2,3,4,5,6)
+VALUE: 1
+HELP: Number of ungaged layers around a point:\n- In the regularized formulations, the divergence term of the elements\n   inside the ungauged layers is removed.\n- In the LL2P formulations, both the divergence term and the bubble\n   contribution of the elements inside the ungauged layers are removed.
+END CONDITION
+NUMBER: 4 CONDITION: Line_Voltage_Full_wave
+CONDTYPE: over lines
+CONDMESHTYPE: over nodes
+QUESTION: Module_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage module over lines.
+QUESTION: Phase_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage phase over lines.
+END CONDITION
+NUMBER: 5 CONDITION: Line_Voltage_Electrostatic
+CONDTYPE: over lines
+CONDMESHTYPE: over nodes
+QUESTION: Voltage
+VALUE: 0.0
+HELP: Electrostatic voltage over lines.
+END CONDITION
+NUMBER: 6 CONDITION: Line_Singularity
+CONDTYPE: over lines
+CONDMESHTYPE: over nodes
+QUESTION: Ungaged_layers#CB#(1,2,3,4,5,6)
+VALUE: 1
+HELP: Number of ungaged layers around a line:\n- In the regularized formulations, the divergence term of the elements\n   inside the ungauged layers is removed.\n- In the LL2P formulations, both the divergence term and the bubble\n   contribution of the elements inside the ungauged layers are removed.
+END CONDITION
+NUMBER: 7 CONDITION: Perfect_Electric_Conductor_(PEC)
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: n_x_E_=#CB#(0.0)
+VALUE: 0.0
+HELP: - For E-field formulations, it imposes n x E = 0 on the surface.\n- For A-V potential formulations, it sets n x A = 0 and V = 0 on the surface.\n- For edge-stabilized formulations, it additionally sets the Lagrange multiplier\n   equal to zero on the surface.
+END CONDITION
+NUMBER: 8 CONDITION: Perfect_Magnetic_Conductor_(PMC)
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: n_._E_=#CB#(0.0)
+VALUE: 0.0
+HELP: - For regularized and LL2P E-field formulations, it imposes n . E = 0 on the surface.\n- For regularized and LL2P A-V potential formulations, it sets n . A = 0 on the surface.\n- It is redundant for double-curl edge formulations.\n- This condition is specifically designed for symmetry surfaces.
+END CONDITION
+NUMBER: 9 CONDITION: Transversal_Electric_Condition_(TEC)
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: n_._E_=#CB#(0.0)
+VALUE: 0.0
+HELP: - For regularized and LL2P E-field formulations, it imposes n . E = 0 on the surface.\n- For regularized and LL2P A-V potential formulations, it sets n . A = 0 on the surface.\n- It is redundant for double-curl edge formulations.\n- This condition is specifically designed for waveguide port surfaces.
+END CONDITION
+NUMBER: 10 CONDITION: Periodic_Boundary_Condition_(PBC)
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Face#CB#(Front,Back,Right,Left)
+VALUE: Front
+HELP: It enforces equal fields (with a phase difference) on two \nseparate surfaces:\n\n- "Front-Back" surfaces must lie parallel to the XY-plane.\n\n- For cyclic periodic symmetry, "Left" surface must be \n   positioned in the 00-YZ plane and the axis of rotation \n   must align with the Z-axis.\n\n- Set the symmetry type and phase difference between \n   surfaces in "Solving parameters" -> "Geometry".\n\n- If PBCs are required only between parallel surfaces with  \n   no phase difference, separate contact volume elements  \n   can be used as an equivalent alternative.\n
+END CONDITION
+NUMBER: 11 CONDITION: Surface_Voltage_Full_wave
+CONDTYPE: over surfaces
+CONDMESHTYPE: over nodes
+QUESTION: Module_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage module over surfaces.
+QUESTION: Phase_Voltage
+VALUE: 0.0
+HELP: Time-harmonic voltage phase over surfaces.
+END CONDITION
+NUMBER: 12 CONDITION: Surface_Voltage_Electrostatic
+CONDTYPE: over surfaces
+CONDMESHTYPE: over nodes
+QUESTION: Voltage
+VALUE: 0.0
+HELP: Electrostatic voltage over surfaces.
+END CONDITION
+NUMBER: 13 CONDITION: Surface_Singularity
+CONDTYPE: over surfaces
+CONDMESHTYPE: over nodes
+QUESTION: Ungaged_layers#CB#(1,2,3,4,5,6)
+VALUE: 1
+HELP: Number of ungaged layers around a surface:\n- In the regularized formulations, the divergence term of the elements\n   inside the ungauged layers is removed.\n- In the LL2P formulations, both the divergence term and the bubble\n   contribution of the elements inside the ungauged layers are removed.
+END CONDITION
+BOOK:Robin_conditions
+NUMBER: 14 CONDITION: Far_field_condition_Full_wave
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Far_field__#CB#(1st_ABC)
+VALUE: 1st_ABC
+HELP: Far field boundary condition (1st order ABC).
+END CONDITION
+NUMBER: 15 CONDITION: Far_field_condition_Cold_plasma
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Plasma_wave_type#MAT#(Plasma_far_field_propeties)
+VALUE: FW
+HELP: Cold plasma wave type at the boundary:\n- FW : n2 = RL/S.\n- RW : n2 = R.\n- LW : n2 = L.\n- PW : n2 = P.
+END CONDITION
+NUMBER: 16 CONDITION: Robin_condition_Full_wave
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Robin_coefficients#MAT#(Robin_condition_coefficients)
+VALUE: Robin_coeffs_Full_wave
+HELP: Full wave Robin boundary condition.
+END CONDITION
+NUMBER: 17 CONDITION: Robin_condition_Imported
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Imported_Robin_surface#MAT#(Imported_Robin_surfaces)
+VALUE: IRBCS_1
+HELP: Robin boundary condition imported from files.
+END CONDITION
+NUMBER: 18 CONDITION: Robin_condition_Electrostatic
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Robin_coefficients#MAT#(Robin_condition_coefficients)
+VALUE: Robin_coeffs_Electrostatic
+HELP: Far-field boundary conditions for electrostatic problems and current flux input.
+END CONDITION
+NUMBER: 19 CONDITION: Coaxial_TEM_condition
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Coaxial_Port#MAT#(CoaxialPort_TEM)
+VALUE: CoaxialPort_1
+HELP: Coaxial waveguide port condition (TEM mode).
+END CONDITION
+NUMBER: 20 CONDITION: RW_port_TE10_condition
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: RW_Port#MAT#(RWPort_TE10)
+VALUE: RWPort_1
+HELP: Rectangular waveguide port condition (TE10 mode).
+END CONDITION
+BOOK:Field_integrals
+NUMBER: 21 CONDITION: Field_surface_integral
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: Surface_to_integer#MAT#(Surface_to_integer_propeties)
+VALUE: Surface_1
+HELP: Surface over which the fields are integrated.
+END CONDITION
+NUMBER: 22 CONDITION: Projection_RWTE10
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: RWPort#MAT#(RWPort_TE10)
+VALUE: RWPort_1
+HELP: Rectangular waveguide port over which the scattering parameters Sij are calculated.
+END CONDITION
+NUMBER: 23 CONDITION: Projection_CoaxialTEM
+CONDTYPE: over surfaces
+CONDMESHTYPE: over face elements
+QUESTION: CoaxialPort#MAT#(CoaxialPort_TEM)
+VALUE: CoaxialPort_1
+HELP: Coaxial waveguide port over which the scattering parameters Sij are calculated.
+END CONDITION
+NUMBER: 24 CONDITION: Field_volume_integral
+CONDTYPE: over volumes
+CONDMESHTYPE: over body elements
+QUESTION: Volume_to_integer#MAT#(Volume_to_integer_propeties)
+VALUE: Volume_1
+HELP: Volume over which the fields are integrated.
+END CONDITION
+BOOK:Current_sources
+NUMBER: 25 CONDITION: FD_current_density
+CONDTYPE: over volumes
+CONDMESHTYPE: over body elements
+QUESTION: Source#MAT#(Current_sources_properties)
+VALUE: J_source
+HELP: Value of the current density over a volume.
+END CONDITION

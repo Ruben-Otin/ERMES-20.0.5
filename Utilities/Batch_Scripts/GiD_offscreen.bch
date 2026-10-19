@@ -1,0 +1,115 @@
+###################################################################################################
+# - Example of GiD offscreen batch file.
+# - Check macro editor in GiD for more commands.
+# - Execute 'Import -> batch file...' (ctrl-b) in GiD to read and execute this file.
+# - Note: delete this block comment before use.
+###################################################################################################
+
+Mescape Files New No escape escape escape escape 
+data defaults ProblemType UNKNOWN 
+
+Mescape Data Defaults ProblemType yes ERMES_20.0.5/ERMES 
+escape escape escape escape escape escape 
+
+Mescape Files SaveAs -alsoresults:0 -geoversion:current -- 
+{D:/ON-WORK/ERMES/Benchmarks/MASTU-2D-t20_p20.gid} 
+
+Mescape Geometry Create Line 
+-1.794374,0.185010,0.104873 
+-1.543639,-0.104562,0.341051 
+-1.313198,-0.008762,0.213865 
+-1.242908,0.416877,-0.201975 
+-1.372117,0.508388,-0.268792 
+-1.794374,0.185010,0.104873 
+escape escape 
+
+Mescape Utilities Collapse model Yes 
+Mescape Utilities Repair Yes 
+
+Mescape Geometry Create NurbsSurface 1 2 3 4 5 escape escape escape 
+'GetPointCoord Silent FJoin 1 escape 
+'GetPointCoord Silent FJoin 1 escape 
+
+Mescape Utilities Copy Surfaces DoExtrude Volumes MaintainLayers 
+Translation FJoin 1 FNoJoin -1.793923,0.187749,0.107752 1 escape 
+
+Mescape Geometry Create Contact SeparatedVolume 1 7 escape escape 
+
+Mescape Utilities Collapse model Yes 
+Mescape Utilities Repair Yes 
+'Zoom Frame escape 
+
+Mescape Files Save 
+
+Mescape Data Materials NewMaterial 
+Robin_coefficients_Gauss_beam 
+Robin_coefficients_Gauss_beam Yes 
+Robin_coeffs_Gauss_beam 
+0.582700 -1.570796 { } 
+-0.702357 -3.141593 { } 
+0.047120 0.047120 { } 
+-2.137668 -0.132733 0.460818 { } 
+-0.074018 0.856409 0.510965 { } 
+0.822705 0.342020 -0.454070 
+escape 
+
+Mescape Data Materials NewMaterial 
+Cold_plasma Cold_plasma Yes cold_plasma 
+Full_3D 0.0 0.0 { } 
+0.0 0.0 0.0 { } 
+0.0 0.0 0.0 { } 
+0.0 0.0 0.0 { } 
+{../Plasma/ne_2D-t20_p20.dat} 
+{../Plasma/Be_2D-t20_p20.dat} 
+0.000000 1.000000 0.000000 { } 
+0.0 0.0 { } 
+0.0 0.0 { } 
+0.0 0.0 0.0 0.0 { } 
+0.0 0.0 0.0 
+Full_matrix Off 1e-6 Off 1e6 { } 
+ComplexFreq_ele 
+1e+09 
+escape 
+
+Mescape Data ProblemData Cold_plasma 3D { } 
+{RME_1st} 
+Off { } On Off Off { } 
+Nodes Off Release m 1.0 1e-9 { } 
+Area_weighted On On { } 
+Manual Periodic 0.0 0.0 Off Off Off { } 
+Off Binary 1 2.8e+10 { } 
+0 0.0 1.0 { } 0 1e9 3e9 0.1e9 { } 
+External_solver { } { } 8 1e-3 1 
+Diagonal 1e6 1e6 250 250 Nil_vector Final_step { } { } 
+{wsl} {../PETSc/win2wsl.sh >> SolverInfo.info} 
+1 0 0 0 1 0 0 {Time step} T T/32 
+0 0 0 0 1 1 1 0 0 0 0 1 1 1 1 0 1 0 
+
+Mescape Files Save 
+
+Mescape Data Materials AssignMaterial Cold_plasma Volumes 1 escape 
+Mescape escape escape escape escape 
+
+Mescape Data Conditions AssignCond Far_field_condition_Cold_plasma 
+Change FW 3 4 5 6 escape 
+Mescape escape escape escape escape 
+
+Mescape Data Conditions AssignCond Robin_condition_Full_wave 
+Change Robin_coefficients_Gauss_beam 2 escape 
+Mescape escape escape escape escape 
+
+Mescape Data Conditions AssignCond Field_surface_integral 
+Change Surface_1 2 escape 
+Mescape escape escape escape escape 
+
+Mescape Data Conditions AssignCond Field_surface_integral 
+Change Surface_2 6 escape 
+Mescape escape escape escape escape 
+
+Mescape Files Save 
+
+Mescape Meshing Generate 0.004 MeshingParametersFrom=Model escape 
+
+Mescape Files Save 
+Mescape Files WriteCalcFile 
+Mescape Files Save 

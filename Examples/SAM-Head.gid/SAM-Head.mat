@@ -1,0 +1,960 @@
+BOOK:IHL_materials
+NUMBER: 1 MATERIAL: Vacuum
+QUESTION: property
+VALUE: ihl_material
+STATE: HIDDEN
+QUESTION: Electric_conductivity_real
+VALUE: 0.0
+HELP: Real part of the electric conductivity for isotropic homogeneous linear materials (S/m).
+QUESTION: Electric_conductivity_img
+VALUE: 0.0
+HELP: Imaginary part of the electric conductivity for isotropic homogeneous linear materials (S/m).
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: Electric_permittivity_real
+VALUE: 1.0
+HELP: Real part of the relative electric permittivity for isotropic homogeneous linear materials.
+QUESTION: Electric_permittivity_img
+VALUE: 0.0
+HELP: Imaginary part of the relative electric permittivity for isotropic homogeneous linear materials.
+QUESTION: __#CB#(_)
+VALUE: 
+QUESTION: Magnetic_permeability_real
+VALUE: 1.0
+HELP: Real part of the relative magnetic permeability for isotropic homogeneous linear materials.
+QUESTION: Magnetic_permeability_img
+VALUE: 0.0
+HELP: Imaginary part of the relative magnetic permeability for isotropic homogeneous linear materials.
+END MATERIAL
+NUMBER: 2 MATERIAL: Dielectric
+QUESTION: property
+VALUE: ihl_material
+STATE: HIDDEN
+QUESTION: Electric_conductivity_real
+VALUE: 0.1
+HELP: Real part of the electric conductivity for isotropic homogeneous linear materials (S/m).
+QUESTION: Electric_conductivity_img
+VALUE: 0.0
+HELP: Imaginary part of the electric conductivity for isotropic homogeneous linear materials (S/m).
+QUESTION: _#CB#(_)
+VALUE: 
+QUESTION: Electric_permittivity_real
+VALUE: 2.0
+HELP: Real part of the relative electric permittivity for isotropic homogeneous linear materials.
+QUESTION: Electric_permittivity_img
+VALUE: 0.0
+HELP: Imaginary part of the relative electric permittivity for isotropic homogeneous linear materials.
+QUESTION: __#CB#(_)
+VALUE: 
+QUESTION: Magnetic_permeability_real
+VALUE: 1.0
+HELP: Real part of the relative magnetic permeability for isotropic homogeneous linear materials.
+QUESTION: Magnetic_permeability_img
+VALUE: 0.0
+HELP: Imaginary part of the relative magnetic permeability for isotropic homogeneous linear materials.
+END MATERIAL
+BOOK:Plasma
+NUMBER: 3 MATERIAL: Cold_plasma
+TITLE: Plasma_geometry
+QUESTION: property
+VALUE: cold_plasma
+STATE: HIDDEN
+QUESTION: Geometry_extrapolation#CB#(Flat_1D,Curved,Full_3D,Tensor)
+VALUE: Flat
+HELP: Plasma geometry extrapolation types:\n \n- 'Flat_1D': a 1D measurement line is read from the files specified in the 'ne_file_path' and 'Be_file_path' fields. \n    The 1D line is extrapolated into the 3D geometry by extrusion in the toroidal direction and with a curvature \n    in the poloidal direction defined by the 'Poloidal_ne_curvature' and 'Poloidal_Be_curvature' fields. The first \n    point of the 1D measurement line is placed at the coordinates specified in the 'L1_00_XYZ' fields.\n    The values of 'ne' and 'Be' outside the defined line will correspond to those at the endpoints of the line.\n \n- 'Curved': a 1D measurement line is read from the files specified in the 'ne_file_path' and 'Be_file_path' fields. \n    The 1D line is extrapolated into the 3D geometry by extrusion, applying a poloidal curvature defined by \n    the 'Poloidal_ne_curvature' and 'Poloidal_Be_curvature' fields, and a toroidal curvature determined by the \n    distance to the tokamak centre. The tokamak centre coordinates are specified in the 'TK_00_XYZ' fields. \n    The first point of the 1D measurement line is placed at the coordinates defined in the 'L1_00_XYZ' fields.\n    The values of 'ne' and 'Be' outside the defined line will correspond to those at the endpoints of the line.\n \n- 'Full_3D': pointwise nodal 3D distributions are read from the files specified in the fields 'ne_file_path' and \n    'Be_file_path'. The density and field distributions are applied directly to the 3D geometry node-by-node. \n    The folder '\\Documents\\Plasma_Files' contains practical examples of Python scripts to transform EQDSK \n    equilibrium plasma files into the required format.\n \n- 'Tensor': a permittivity tensor defined in the binary file 'Tensor_K_CPGE.bin' is applied to the mesh nodes.\n    This tensor make use of the density and magnetic field 3D data specified in the files 'ne_file_path' and \n    'Be_file_path'. The tensor components must be relative to the vacuum permittivity and defined in the Be \n    field coordinate system. The tensor file must be saved in the problem folder. An example of the required \n    file format can be found in the '\\Documents\\Plasma_Files\\Python_Scripts' directory.\n
+QUESTION: Poloidal_ne_curvature
+VALUE: 0.0
+HELP: Poloidal curvature applied to 'ne' density profile in the 'Flat_1D' and 'Curved' modes.\nThe centre of curvature is located at a distance equal to the 'Poloidal_ne_curvature' from \nthe first point of the 1D measurement line. The first point of the 1D measurement line \nis located at the coordinates specified in the 'L1_00_XYZ' fields.
+QUESTION: Poloidal_Be_curvature
+VALUE: 0.0
+HELP: Poloidal curvature applied to the 'Be' field profile in the 'Flat_1D' and 'Curved' modes.\nThe centre of curvature is located at a distance equal to the 'Poloidal_Be_curvature' from \nthe first point of the 1D measurement line. The first point of the 1D measurement line \nis located at the coordinates specified in the 'L1_00_XYZ' fields.
+QUESTION: ___#CB#(_)
+VALUE: 
+QUESTION: L1_00_X
+VALUE: 0.0
+HELP: X coordinate of the first point of the 1D measurement line.
+QUESTION: L1_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the first point of the 1D measurement line.
+QUESTION: L1_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the first point of the 1D measurement line.
+QUESTION: ____#CB#(_)
+VALUE: 
+QUESTION: TK_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of the tokamak.
+QUESTION: TK_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of the tokamak.
+QUESTION: TK_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of the tokamak.
+QUESTION: _____#CB#(_)
+VALUE: 
+QUESTION: TK_axis_X
+VALUE: 0.0
+HELP: X component of the main axis of the tokamak.
+QUESTION: TK_axis_Y
+VALUE: 0.0
+HELP: Y component of the main axis of the tokamak.
+QUESTION: TK_axis_Z
+VALUE: 0.0
+HELP: Z component of the main axis of the tokamak.
+QUESTION: ______#CB#(_)
+VALUE: 
+QUESTION: ne_file_path
+VALUE: ..\Electron_Density_Data.dat
+HELP: Electron density data file path.\nCheck examples of file formats in the problemtype folder: '\\Documents\\Plasma_Files'.
+QUESTION: Be_file_path
+VALUE: ..\Bext_Field_Data.dat
+HELP: Applied external static B field data file path.\nCheck examples of file formats in the problemtype folder: '\\Documents\\Plasma_Files'.
+TITLE: Species_densities
+QUESTION: H1_1+_/_ne
+VALUE: 0.0
+HELP: Hydrogen 1 (protium) ion q=+1e density relative to electron density (ne).
+QUESTION: H2_1+_/_ne
+VALUE: 0.0
+HELP: Hydrogen 2 (deuterium) ion q=+1e density relative to electron density (ne).
+QUESTION: H3_1+_/_ne
+VALUE: 0.0
+HELP: Hydrogen 3 (tritium) ion q=+1e density relative to electron density (ne).
+QUESTION: _______#CB#(_)
+VALUE: 
+QUESTION: He3_1+_/_ne
+VALUE: 0.0
+HELP: Helium 3 ion q=+1e density relative to electron density (ne).
+QUESTION: He3_2+_/_ne
+VALUE: 0.0
+HELP: Helium 3 ion q=+2e density relative to electron density (ne).
+QUESTION: ________#CB#(_)
+VALUE: 
+QUESTION: He4_1+_/_ne
+VALUE: 0.0
+HELP: Helium 4 ion q=+1e density relative to electron density (ne).
+QUESTION: He4_2+_/_ne
+VALUE: 0.0
+HELP: Helium 4 ion q=+2e density relative to electron density (ne).
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: Be9_1+_/_ne
+VALUE: 0.0
+HELP: Beryllium 9 ion q=+1e density relative to electron density (ne).
+QUESTION: Be9_2+_/_ne
+VALUE: 0.0
+HELP: Beryllium 9 ion q=+2e density relative to electron density (ne).
+QUESTION: Be9_3+_/_ne
+VALUE: 0.0
+HELP: Beryllium 9 ion q=+3e density relative to electron density (ne).
+QUESTION: Be9_4+_/_ne
+VALUE: 0.0
+HELP: Beryllium 9 ion q=+4e density relative to electron density (ne).
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: Ne20_10+_/_ne
+VALUE: 0.0
+HELP: Neon 20 ion q=+10e density relative to electron density (ne).
+QUESTION: Ni60_20+_/_ne
+VALUE: 0.0
+HELP: Nickel 60 ion q=+20e density relative to electron density (ne).
+QUESTION: W184_25+_/_ne
+VALUE: 0.0
+HELP: Tungsten 184 ion q=+25e density relative to electron density (ne).
+TITLE: Problem_settings
+QUESTION: Matrix_format#CB#(Full_matrix,Herm-Full,Herm-Symm)
+VALUE: Full_matrix
+HELP: Available storage formats for the cold plasma system matrix:\n \n- 'Full_matrix': stores a non-symmetric matrix containing: \n    1) the contribution of the volumetric and the Robin boundary condition elements altogether.\n \n- 'Herm-Full': stores two separate matrices containing: \n    1) the diagonal and the upper diagonal of the volumetric elements contribution and, \n    2) a non-symmetric matrix with the contribution of the Robin boundary condition elements.\n \n- 'Herm-Symm': stores two separate matrices containing: \n    1) the diagonal and the upper diagonal of the volumetric elements contribution and, \n    2) the diagonal and the upper diagonal of the Robin boundary condition elements contribution. \n \n
+QUESTION: Kij_tolerance#CB#(Off,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,custom)
+VALUE: Off
+HELP: Minimum value of the elements of the matrix.\nIf | Kij | <= Tol then, Kij will not be added to the system matrix.
+DEPENDENCIES: (custom,RESTORE,custom_Kij_tol,#CURRENT#)              (#DEFAULT#,HIDE,custom_Kij_tol,#CURRENT#)
+QUESTION: custom_Kij_tol
+VALUE: 1e-6
+HELP: Custom minimum value of the elements of the matrix.\n If | Kij | <= Tol then, Kij is not added to the system matrix.
+QUESTION: E_par_tolerance#CB#(Off,1e1,1e2,1e3,1e4,1e5,1e6,custom)
+VALUE: Off
+HELP: Tolerance applied to the E field parallel to the magnetic flux density.\nE parallel will be made equal to zero in the nodes where P < 0 and | P | > Tol.\nThis condition will be ignored in the EDG formulations.
+DEPENDENCIES: (custom,RESTORE,custom_E_par_tol,#CURRENT#)              (#DEFAULT#,HIDE,custom_E_par_tol,#CURRENT#)
+QUESTION: custom_E_par_tol
+VALUE: 1e6
+HELP: Custom tolerance applied to the E field component parallel to the magnetic flux density.\nE parallel will be made equal to zero in the nodes where P < 0 and | P | > Tol.\nThis condition will be ignored in the EDG formulations.
+QUESTION: ___________#CB#(_)
+VALUE: 
+QUESTION: Damping_mode#CB#(No_damping,Background_ctc,Background_den,ComplexFreq_all,ComplexFreq_ele)
+VALUE: No_damping
+HELP: Available damping modes:\n \n- 'No_damping': no damping is applied to the cold plasma tensor.\n \n- 'Background_ctc': a constant damping value is added to the diagonal terms of the cold plasma tensor \n    ( R + i*Damping, L + i*Damping, P + i*Damping, S + i*Damping ) everywhere the cold plasma is defined.\n \n- 'Background_den': as in the 'Background_ctc' mode, a constant damping value is added to the diagonal \n    terms of the cold plasma tensor ( R + i*Damping, L + i*Damping, P + i*Damping, S + i*Damping ) but, \n    in this case, the damping value is made zero when the electron density is zero.\n \n- 'ComplexFreq_all': a constant collision frequency is added to the frequency terms of all the species \n    ( w + i*Damping ), as shown in Swanson "Plasma waves" chapter 3.\n \n- 'ComplexFreq_ele': as in the 'ComplexFreq_all' mode, a collision frequency is added to the frequency \n    terms ( w + i*Damping ) but, in this case, only in the electrons contribution to the cold plasma tensor. \n \n
+QUESTION: Damping__value
+VALUE: 0.0
+HELP: Damping value. \nIt has a different meaning depending on the damping mode selected.
+END MATERIAL
+BOOK:RWPort_TE10
+NUMBER: 4 MATERIAL: RWPort_1
+QUESTION: property
+VALUE: RWPort_coeffs
+STATE: HIDDEN
+QUESTION: RW_Port_ID#CB#(1,2,3,4,5,6,7,8,9)
+VALUE: 1
+HELP: Rectangular waveguide port identification number.
+QUESTION: ____________#CB#(_)
+VALUE: 
+QUESTION: Mod_RW_Ein
+VALUE: 1.0
+HELP: Module of a complex scale factor multiplying the input TE10 field:\n-Use "Mod_RW_Ein = 0.0" for a purely output port.\n-Use "Mod_RW_Ein = sqrt( 2*Po )" for an input power equal to Po.
+QUESTION: Phas_RW_Ein
+VALUE: 0.0
+HELP: Phase of a complex scale factor multiplying the input TE10 field:\n-Use "Phas_RW_Ein = 0.0" for a purely output port.\n-Use "Phas_RW_Ein = Theta" for an input phase equal to Theta (rad).
+QUESTION: _____________#CB#(_)
+VALUE: 
+QUESTION: RW_00_X
+VALUE: 0.0
+HELP: X coordinate of the lower left corner of the port.
+QUESTION: RW_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the lower left corner of the port.
+QUESTION: RW_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the lower left corner of the port.
+QUESTION: ______________#CB#(_)
+VALUE: 
+QUESTION: Height_X
+VALUE: 0.0
+HELP: X coordinate of the upper left corner of the port.
+QUESTION: Height_Y
+VALUE: 0.0
+HELP: Y coordinate of the upper left corner of the port.
+QUESTION: Height_Z
+VALUE: 0.0
+HELP: Z coordinate of the upper left corner of the port.
+QUESTION: _______________#CB#(_)
+VALUE: 
+QUESTION: Width_X
+VALUE: 0.0
+HELP: X coordinate of the lower right corner of the port.
+QUESTION: Width_Y
+VALUE: 0.0
+HELP: Y coordinate of the lower right corner of the port.
+QUESTION: Width_Z
+VALUE: 0.0
+HELP: Z coordinate of the lower right corner of the port.
+END MATERIAL
+NUMBER: 5 MATERIAL: RWPort_2
+QUESTION: property
+VALUE: RWPort_coeffs
+STATE: HIDDEN
+QUESTION: RW_Port_ID#CB#(1,2,3,4,5,6,7,8,9)
+VALUE: 2
+HELP: Rectangular waveguide port identification number.
+QUESTION: ____________#CB#(_)
+VALUE: 
+QUESTION: Mod_RW_Ein
+VALUE: 0.0
+HELP: Module of a complex scale factor multiplying the input TE10 field:\n-Use "Mod_RW_Ein = 0.0" for a purely output port.\n-Use "Mod_RW_Ein = sqrt( 2*Po )" for an input power equal to Po.
+QUESTION: Phas_RW_Ein
+VALUE: 0.0
+HELP: Phase of a complex scale factor multiplying the input TE10 field:\n-Use "Phas_RW_Ein = 0.0" for a purely output port.\n-Use "Phas_RW_Ein = Theta" for an input phase equal to Theta (rad).
+QUESTION: _____________#CB#(_)
+VALUE: 
+QUESTION: RW_00_X
+VALUE: 0.0
+HELP: X coordinate of the lower left corner of the port.
+QUESTION: RW_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the lower left corner of the port.
+QUESTION: RW_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the lower left corner of the port.
+QUESTION: ______________#CB#(_)
+VALUE: 
+QUESTION: Height_X
+VALUE: 0.0
+HELP: X coordinate of the upper left corner of the port.
+QUESTION: Height_Y
+VALUE: 0.0
+HELP: Y coordinate of the upper left corner of the port.
+QUESTION: Height_Z
+VALUE: 0.0
+HELP: Z coordinate of the upper left corner of the port.
+QUESTION: _______________#CB#(_)
+VALUE: 
+QUESTION: Width_X
+VALUE: 0.0
+HELP: X coordinate of the lower right corner of the port.
+QUESTION: Width_Y
+VALUE: 0.0
+HELP: Y coordinate of the lower right corner of the port.
+QUESTION: Width_Z
+VALUE: 0.0
+HELP: Z coordinate of the lower right corner of the port.
+END MATERIAL
+BOOK:CoaxialPort_TEM
+NUMBER: 6 MATERIAL: CoaxialPort_1
+QUESTION: property
+VALUE: CoaxialPort_coeffs
+STATE: HIDDEN
+QUESTION: CC_Port_ID#CB#(1,2,3,4,5,6,7,8,9)
+VALUE: 1
+HELP: Coaxial port identification number.
+QUESTION: ________________#CB#(_)
+VALUE: 
+QUESTION: Mod_CC_Ein
+VALUE: 1.0
+HELP: Module of a complex scale factor multiplying the input TEM field:\n-Use "Mod_CC_Ein = 0.0" for a purely output port.\n-Use "Mod_CC_Ein = sqrt( 2*Po )" for an input power equal to Po.
+QUESTION: Phas_CC_Ein
+VALUE: 0.0
+HELP: Phase of a complex scale factor multiplying the input TEM field:\n-Use "Phas_CC_Ein = 0.0" for a purely output port.\n-Use "Phas_CC_Ein = Theta" for an input phase equal to Theta (rad).
+QUESTION: _________________#CB#(_)
+VALUE: 
+QUESTION: CC_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of the coaxial waveguide port.
+QUESTION: CC_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of the coaxial waveguide port.
+QUESTION: CC_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of the coaxial waveguide port.
+QUESTION: __________________#CB#(_)
+VALUE: 
+QUESTION: Inner_D
+VALUE: 0.0
+HELP: Diameter of the inner cylinder of the coaxial waveguide.
+QUESTION: Exter_D
+VALUE: 0.0
+HELP: Diameter of the exterior cylinder of the coaxial waveguide.
+QUESTION: ___________________#CB#(_)
+VALUE: 
+QUESTION: Epr_coax
+VALUE: 1.0
+HELP: Relative electric permittivity of the medium inside the coaxial waveguide.
+QUESTION: Mu_coax
+VALUE: 1.0
+HELP: Relative magnetic permeability of the medium inside the coaxial waveguide.
+END MATERIAL
+NUMBER: 7 MATERIAL: CoaxialPort_2
+QUESTION: property
+VALUE: CoaxialPort_coeffs
+STATE: HIDDEN
+QUESTION: CC_Port_ID#CB#(1,2,3,4,5,6,7,8,9)
+VALUE: 2
+HELP: Coaxial port identification number.
+QUESTION: ________________#CB#(_)
+VALUE: 
+QUESTION: Mod_CC_Ein
+VALUE: 0.0
+HELP: Module of a complex scale factor multiplying the input TEM field:\n-Use "Mod_CC_Ein = 0.0" for a purely output port.\n-Use "Mod_CC_Ein = sqrt( 2*Po )" for an input power equal to Po.
+QUESTION: Phas_CC_Ein
+VALUE: 0.0
+HELP: Phase of a complex scale factor multiplying the input TEM field:\n-Use "Phas_CC_Ein = 0.0" for a purely output port.\n-Use "Phas_CC_Ein = Theta" for an input phase equal to Theta (rad).
+QUESTION: _________________#CB#(_)
+VALUE: 
+QUESTION: CC_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of the coaxial waveguide port.
+QUESTION: CC_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of the coaxial waveguide port.
+QUESTION: CC_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of the coaxial waveguide port.
+QUESTION: __________________#CB#(_)
+VALUE: 
+QUESTION: Inner_D
+VALUE: 0.0
+HELP: Diameter of the inner cylinder of the coaxial waveguide.
+QUESTION: Exter_D
+VALUE: 0.0
+HELP: Diameter of the exterior cylinder of the coaxial waveguide.
+QUESTION: ___________________#CB#(_)
+VALUE: 
+QUESTION: Epr_coax
+VALUE: 1.0
+HELP: Relative electric permittivity of the medium inside the coaxial waveguide.
+QUESTION: Mu_coax
+VALUE: 1.0
+HELP: Relative magnetic permeability of the medium inside the coaxial waveguide.
+END MATERIAL
+BOOK:Robin_condition_coefficients
+NUMBER: 8 MATERIAL: Robin_coefficients_Plane_waves
+QUESTION: property
+VALUE: Robin_coeffs_Plane_waves
+STATE: HIDDEN
+QUESTION: Multiple_waves#CB#(On,Off)
+VALUE: Off
+HELP: Enables the application of multiple plane waves on a boundary.\nAll the plane waves with "Multiple_waves = On" will be added \ncoherently to the same boundary, using the material properties \ndefined for the first plane wave.
+QUESTION: ___________________#CB#(_)
+VALUE: 
+QUESTION: Module_E_field
+VALUE: 1.0
+HELP: Module of the electric field.
+QUESTION: Phase_E_field
+VALUE: 0.0
+HELP: Phase of the electric field.
+QUESTION: ____________________#CB#(_)
+VALUE: 
+QUESTION: Polarization_X
+VALUE: 0.0
+HELP: X component of the polarization vector.
+QUESTION: Polarization_Y
+VALUE: 1.0
+HELP: Y component of the polarization vector.
+QUESTION: Polarization_Z
+VALUE: 0.0
+HELP: Z component of the polarization vector.
+QUESTION: _____________________#CB#(_)
+VALUE: 
+QUESTION: Wave_vector_X
+VALUE: 0.0
+HELP: X component of the wave vector.
+QUESTION: Wave_vector_Y
+VALUE: 0.0
+HELP: Y component of the wave vector.
+QUESTION: Wave_vector_Z
+VALUE: -1.0
+HELP: Z component of the wave vector.
+QUESTION: ______________________#CB#(_)
+VALUE: 
+QUESTION: IBC_conductivity_real
+VALUE: 0.0
+HELP: Real part of the electric conductivity (S/m) for the impedance boundary condition.
+QUESTION: IBC_conductivity_img
+VALUE: 0.0
+HELP: Imaginary part of the electric conductivity (S/m) for the impedance boundary condition.
+QUESTION: _______________________#CB#(_)
+VALUE: 
+QUESTION: IBC_permittivity_real
+VALUE: 1.0
+HELP: Real part of the relative electric permittivity for the impedance boundary condition.
+QUESTION: IBC_permittivity_img
+VALUE: 0.0
+HELP: Imaginary part of the relative electric permittivity for the impedance boundary condition.
+QUESTION: ________________________#CB#(_)
+VALUE: 
+QUESTION: IBC_permeability_real
+VALUE: 1.0
+HELP: Real part of the relative magnetic permeability for the impedance boundary condition.
+QUESTION: IBC_permeability_img
+VALUE: 0.0
+HELP: Imaginary part of the relative magnetic permeability for the impedance boundary condition.
+END MATERIAL
+NUMBER: 9 MATERIAL: Robin_coefficients_Gauss_beam
+QUESTION: property
+VALUE: Robin_coeffs_Gauss_beam
+STATE: HIDDEN
+QUESTION: GB_module_E_par
+VALUE: 0.0
+HELP: Module of the electric field parallel to the polarization vector at the waist centre.
+QUESTION: GB_phase_E_par
+VALUE: 0.0
+HELP: Phase of the electric field parallel to the polarization vector at the waist centre.
+QUESTION: ___________________#CB#(_)
+VALUE: 
+QUESTION: GB_module_E_per
+VALUE: 0.0
+HELP: Module of the electric field perpendicular to the polarization and wave vectors at the waist centre.
+QUESTION: GB_phase_E_per
+VALUE: 0.0
+HELP: Phase of the electric field perpendicular to the polarization and wave vectors at the waist centre.
+QUESTION: ____________________#CB#(_)
+VALUE: 
+QUESTION: GB_radius_par
+VALUE: 0.0
+HELP: Gaussian beam waist radius in the direction parallel to the polarization vector. For \n2D models (geometry invariant in one direction, e.g. a thin slab with symmetry \nconditions), set the radius of the invariant direction to a value much larger than \nthe model (e.g. 1e3): the beam is then uniform in that direction and |E| at the waist \nequals the given module.
+QUESTION: GB_radius_per
+VALUE: 0.0
+HELP: Gaussian beam waist radius in the direction perpendicular to the polarization and \nwave vectors. For 2D models (geometry invariant in one direction, e.g. a thin slab \nwith symmetry conditions), set the radius of the invariant direction to a value much \nlarger than the model (e.g. 1e3): the beam is then uniform in that direction and |E| \nat the waist equals the given module.
+QUESTION: _____________________#CB#(_)
+VALUE: 
+QUESTION: GB_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of the Gaussian beam waist.
+QUESTION: GB_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of the Gaussian beam waist.
+QUESTION: GB_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of the Gaussian beam waist.
+QUESTION: ______________________#CB#(_)
+VALUE: 
+QUESTION: GB_polarization_X
+VALUE: 0.0
+HELP: X component of the polarization vector.
+QUESTION: GB_polarization_Y
+VALUE: 0.0
+HELP: Y component of the polarization vector.
+QUESTION: GB_polarization_Z
+VALUE: 0.0
+HELP: Z component of the polarization vector.
+QUESTION: _______________________#CB#(_)
+VALUE: 
+QUESTION: GB_wave_vector_X
+VALUE: 0.0
+HELP: X component of the wave vector.
+QUESTION: GB_wave_vector_Y
+VALUE: 0.0
+HELP: Y component of the wave vector.
+QUESTION: GB_wave_vector_Z
+VALUE: 0.0
+HELP: Z component of the wave vector.
+END MATERIAL
+NUMBER: 10 MATERIAL: Robin_coefficients_Quasiestatic
+QUESTION: property
+VALUE: Robin_coeffs_Quasiestatic
+STATE: HIDDEN
+QUESTION: Robin_coeff_real
+VALUE: 0.0
+HELP: Real part of the Robin boundary condition coefficient.
+QUESTION: Robin_coeff_img
+VALUE: 0.0
+HELP: Imaginary part of the Robin boundary condition coefficient.
+QUESTION: ___________________#CB#(_)
+VALUE: 
+QUESTION: Module_Flux
+VALUE: 0.0
+HELP: Module of the injected current density.\nOnly defined for A-phi potentials formulations.
+QUESTION: Phase_Flux
+VALUE: 0.0
+HELP: Phase of the injected current density.\nOnly defined for A-phi potentials formulations.
+END MATERIAL
+NUMBER: 11 MATERIAL: Robin_coefficients_Electrostatic
+QUESTION: property
+VALUE: Robin_coeffs_Electrostatic
+STATE: HIDDEN
+QUESTION: Robin_coeff
+VALUE: 0.0
+HELP: Robin boundary condition coefficient.\nOnly defined for the 'Electrostatic' mode.
+QUESTION: Flux
+VALUE: 0.0
+HELP: Robin boundary condition flux.\nOnly defined for the 'Electrostatic' mode.
+END MATERIAL
+BOOK:Plasma_far_field_propeties
+NUMBER: 12 MATERIAL: FW
+QUESTION: property
+VALUE: Plasma_wave_type
+QUESTION: Plasma_Wave_Type_ID
+VALUE: 1.0
+HELP: Cold plasma wave type at the boundary FW ( n2 = RL/S ).
+END MATERIAL
+NUMBER: 13 MATERIAL: RW
+QUESTION: property
+VALUE: Plasma_wave_type
+QUESTION: Plasma_Wave_Type_ID
+VALUE: 2.0
+HELP: Cold plasma wave type at the boundary RW ( n2 = R ).
+END MATERIAL
+NUMBER: 14 MATERIAL: LW
+QUESTION: property
+VALUE: Plasma_wave_type
+QUESTION: Plasma_Wave_Type_ID
+VALUE: 3.0
+HELP: Cold plasma wave type at the boundary LW ( n2 = L ).
+END MATERIAL
+NUMBER: 15 MATERIAL: PW
+QUESTION: property
+VALUE: Plasma_wave_type
+QUESTION: Plasma_Wave_Type_ID
+VALUE: 4.0
+HELP: Cold plasma wave type at the boundary PW ( n2 = P ).
+END MATERIAL
+BOOK:Current_sources_properties
+NUMBER: 16 MATERIAL: J_cartesian
+QUESTION: property
+VALUE: FDJcartesian
+STATE: HIDDEN
+QUESTION: Jx
+VALUE: 0.0
+HELP: Modulus of the X component of the electric current density vector (A/m^2).
+QUESTION: Phx
+VALUE: 0.0
+HELP: Phase of the X component of the electric current density vector (rad).
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: Jy
+VALUE: 0.0
+HELP: Modulus of the Y component of the electric current density vector (A/m^2).
+QUESTION: Phy
+VALUE: 0.0
+HELP: Phase of the Y component of the electric current density vector (rad).
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: Jz
+VALUE: 0.0
+HELP: Modulus of the Z component of the electric current density vector (A/m^2).
+QUESTION: Phz
+VALUE: 0.0
+HELP: Phase of the Z component of the electric current density vector (rad).
+END MATERIAL
+NUMBER: 17 MATERIAL: J_axisymm
+QUESTION: property
+VALUE: FDJaxisymm
+STATE: HIDDEN
+QUESTION: Ja
+VALUE: 0.0
+HELP: Modulus of the angular component of the axisymmetric electric current density vector (A/m^2).\nThe current density is axisymmetric with respect to the axis AX_axis_XYZ with centre of curvature on AX_00_XYZ.
+QUESTION: Pha
+VALUE: 0.0
+HELP: Phase of the angular component of the axisymmetric electric current density vector (rad).\nThe current density is axisymmetric with respect to the axis AX_axis_XYZ with centre of curvature on AX_00_XYZ.
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: AX_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of curvature.
+QUESTION: AX_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of curvature.
+QUESTION: AX_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of curvature.
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: AX_axis_X
+VALUE: 0.0
+HELP: X component of the axisymmetric axis.
+QUESTION: AX_axis_Y
+VALUE: 0.0
+HELP: Y component of the axisymmetric axis.
+QUESTION: AX_axis_Z
+VALUE: 0.0
+HELP: Z component of the axisymmetric axis.
+END MATERIAL
+NUMBER: 18 MATERIAL: J_combine
+TITLE: Cartesian
+QUESTION: property
+VALUE: FDJcombine
+STATE: HIDDEN
+QUESTION: Jx
+VALUE: 0.0
+HELP: Modulus of the X component of the electric current density vector (A/m^2).
+QUESTION: Phx
+VALUE: 0.0
+HELP: Phase of the X component of the electric current density vector (rad).
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: Jy
+VALUE: 0.0
+HELP: Modulus of the Y component of the electric current density vector (A/m^2).
+QUESTION: Phy
+VALUE: 0.0
+HELP: Phase of the Y component of the electric current density vector (rad).
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: Jz
+VALUE: 0.0
+HELP: Modulus of the Z component of the electric current density vector (A/m^2).
+QUESTION: Phz
+VALUE: 0.0
+HELP: Phase of the Z component of the electric current density vector (rad).
+TITLE: Axisymmetric
+QUESTION: Ja
+VALUE: 0.0
+HELP: Modulus of the angular component of the axisymmetric electric current density vector (A/m^2).\nThe current density is axisymmetric with respect to the axis AX_axis_XYZ with centre of curvature on AX_00_XYZ.
+QUESTION: Pha
+VALUE: 0.0
+HELP: Phase of the angular component of the axisymmetric electric current density vector (rad).\nThe current density is axisymmetric with respect to the axis AX_axis_XYZ with centre of curvature on AX_00_XYZ.
+QUESTION: ___________#CB#(_)
+VALUE: 
+QUESTION: AX_00_X
+VALUE: 0.0
+HELP: X coordinate of the centre of curvature.
+QUESTION: AX_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the centre of curvature.
+QUESTION: AX_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the centre of curvature.
+QUESTION: ____________#CB#(_)
+VALUE: 
+QUESTION: AX_axis_X
+VALUE: 0.0
+HELP: X component of the axisymmetric axis.
+QUESTION: AX_axis_Y
+VALUE: 0.0
+HELP: Y component of the axisymmetric axis.
+QUESTION: AX_axis_Z
+VALUE: 0.0
+HELP: Z component of the axisymmetric axis.
+END MATERIAL
+NUMBER: 19 MATERIAL: J_helicoidal
+QUESTION: property
+VALUE: FDJhelicoidal
+STATE: HIDDEN
+QUESTION: Jpol
+VALUE: 0.0
+HELP: Module of the poloidal component of the helicoidal current density (A/m^2).
+QUESTION: Php
+VALUE: 0.0
+HELP: Phase of the poloidal component of the helicoidal current density (rad).
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: Jtor
+VALUE: 0.0
+HELP: Module of the toroidal component of the helicoidal current density (A/m^2).
+QUESTION: Pht
+VALUE: 0.0
+HELP: Phase of the toroidal component of the helicoidal current density (rad).
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: HL_R_
+VALUE: 0.0
+HELP: Major radius of the torus in where the helicoidal current is applied.\nMust be greater than zero.
+QUESTION: ___________#CB#(_)
+VALUE: 
+QUESTION: HL_00_X
+VALUE: 0.0
+HELP: X coordinate of the torus centre.
+QUESTION: HL_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the torus centre.
+QUESTION: HL_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the torus centre.
+QUESTION: ____________#CB#(_)
+VALUE: 
+QUESTION: HL_axis_X
+VALUE: 0.0
+HELP: X component of the torus axis.
+QUESTION: HL_axis_Y
+VALUE: 0.0
+HELP: Y component of the torus axis.
+QUESTION: HL_axis_Z
+VALUE: 0.0
+HELP: Z component of the torus axis.
+END MATERIAL
+NUMBER: 20 MATERIAL: J_plasmam
+QUESTION: property
+VALUE: FDJplasmam
+STATE: HIDDEN
+QUESTION: Jpol
+VALUE: 0.0
+HELP: Module of the complex constant applied to the poloidal current density component (A/m^2).
+QUESTION: Php
+VALUE: 0.0
+HELP: Phase of the complex constant applied to the poloidal current density component (rad).
+QUESTION: _________#CB#(_)
+VALUE: 
+QUESTION: Jtor
+VALUE: 0.0
+HELP: Module of the complex constant applied to the toroidal current density component (A/m^2).
+QUESTION: Pht
+VALUE: 0.0
+HELP: Phase of the complex constant applied to the toroidal current density component (rad).
+QUESTION: __________#CB#(_)
+VALUE: 
+QUESTION: PM_M
+VALUE: 0
+HELP: Plasma mode index ( M ):\n- Jpol = |Jpol| * exp( i*Php ) * sin( M * Theta + Phi ).\n- Jtor  = |Jtor| * exp( i*Pht  ) * { - M * [ ( R / r ) + cos( Theta ) ] * sin( M * Theta + Phi ) - sin( Theta ) * cos( M * Theta + Phi ) }.
+QUESTION: PM_R_
+VALUE: 0.0
+HELP: Major radius of the torus in where the plasma mode is applied.\nMust be greater than cero.
+QUESTION: ___________#CB#(_)
+VALUE: 
+QUESTION: PM_00_X
+VALUE: 0.0
+HELP: X coordinate of the torus centre.
+QUESTION: PM_00_Y
+VALUE: 0.0
+HELP: Y coordinate of the torus centre.
+QUESTION: PM_00_Z
+VALUE: 0.0
+HELP: Z coordinate of the torus centre.
+QUESTION: ____________#CB#(_)
+VALUE: 
+QUESTION: PM_axis_X
+VALUE: 0.0
+HELP: X component of the torus axis.
+QUESTION: PM_axis_Y
+VALUE: 0.0
+HELP: Y component of the torus axis.
+QUESTION: PM_axis_Z
+VALUE: 0.0
+HELP: Z component of the torus axis.
+END MATERIAL
+BOOK:Volume_to_integer_propeties
+NUMBER: 21 MATERIAL: Volume_1
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 1.0
+END MATERIAL
+NUMBER: 22 MATERIAL: Volume_2
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 2.0
+END MATERIAL
+NUMBER: 23 MATERIAL: Volume_3
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 3.0
+END MATERIAL
+NUMBER: 24 MATERIAL: Volume_4
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 4.0
+END MATERIAL
+NUMBER: 25 MATERIAL: Volume_5
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 5.0
+END MATERIAL
+NUMBER: 26 MATERIAL: Volume_6
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 6.0
+END MATERIAL
+NUMBER: 27 MATERIAL: Volume_7
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 7.0
+END MATERIAL
+NUMBER: 28 MATERIAL: Volume_8
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 8.0
+END MATERIAL
+NUMBER: 29 MATERIAL: Volume_9
+QUESTION: property
+VALUE: VolumeToInt
+QUESTION: Volume_ID
+VALUE: 9.0
+END MATERIAL
+BOOK:Surface_to_integer_propeties
+NUMBER: 30 MATERIAL: Surface_1
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 1.0
+END MATERIAL
+NUMBER: 31 MATERIAL: Surface_2
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 2.0
+END MATERIAL
+NUMBER: 32 MATERIAL: Surface_3
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 3.0
+END MATERIAL
+NUMBER: 33 MATERIAL: Surface_4
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 4.0
+END MATERIAL
+NUMBER: 34 MATERIAL: Surface_5
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 5.0
+END MATERIAL
+NUMBER: 35 MATERIAL: Surface_6
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 6.0
+END MATERIAL
+NUMBER: 36 MATERIAL: Surface_7
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 7.0
+END MATERIAL
+NUMBER: 37 MATERIAL: Surface_8
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 8.0
+END MATERIAL
+NUMBER: 38 MATERIAL: Surface_9
+QUESTION: property
+VALUE: SurfaceToInt
+QUESTION: Surface_ID
+VALUE: 9.0
+END MATERIAL
+BOOK:PBC_surfaces
+NUMBER: 39 MATERIAL: Front
+QUESTION: property
+VALUE: PBCSurface
+QUESTION: PBCSurface_ID
+VALUE: 11
+END MATERIAL
+NUMBER: 40 MATERIAL: Back
+QUESTION: property
+VALUE: PBCSurface
+QUESTION: PBCSurface_ID
+VALUE: 12
+END MATERIAL
+NUMBER: 41 MATERIAL: Right
+QUESTION: property
+VALUE: PBCSurface
+QUESTION: PBCSurface_ID
+VALUE: 21
+END MATERIAL
+NUMBER: 42 MATERIAL: Left
+QUESTION: property
+VALUE: PBCSurface
+QUESTION: PBCSurface_ID
+VALUE: 22
+END MATERIAL
+BOOK:Imported_Robin_surfaces
+NUMBER: 43 MATERIAL: IRBCS_1
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 1.0
+END MATERIAL
+NUMBER: 44 MATERIAL: IRBCS_2
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 2.0
+END MATERIAL
+NUMBER: 45 MATERIAL: IRBCS_3
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 3.0
+END MATERIAL
+NUMBER: 46 MATERIAL: IRBCS_4
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 4.0
+END MATERIAL
+NUMBER: 47 MATERIAL: IRBCS_5
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 5.0
+END MATERIAL
+NUMBER: 48 MATERIAL: IRBCS_6
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 6.0
+END MATERIAL
+NUMBER: 49 MATERIAL: IRBCS_7
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 7.0
+END MATERIAL
+NUMBER: 50 MATERIAL: IRBCS_8
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 8.0
+END MATERIAL
+NUMBER: 51 MATERIAL: IRBCS_9
+QUESTION: property
+VALUE: IRBCSurface
+QUESTION: IRBCS_ID
+VALUE: 9.0
+END MATERIAL

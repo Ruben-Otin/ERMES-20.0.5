@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{611E75E2-50C6-41DB-83E5-BA0D4E99CC6C}</ProjectGuid>
+    <RootNamespace>ERMES</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\Release/ERMES.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\external_libraries;..\external_libraries\metis\include;..\external_libraries\gidpost;..\external_libraries\gidpost\win;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ERMES_USE_METIS;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeaderOutputFile>.\Release/ERMES.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ERMES_USE_METIS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c0a</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\Release/ERMES.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>.\Release/ERMES.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/ERMES.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Release/ERMES.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\external_libraries;..\external_libraries\metis\include;..\external_libraries\gidpost;..\external_libraries\gidpost\win;..\external_libraries\flex++bison++;..\external_libraries\flex++bison++\flex_bison;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ERMES_USE_METIS;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <OpenMPSupport>true</OpenMPSupport>
+      <PrecompiledHeaderOutputFile>.\Release/ERMES.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ERMES_USE_METIS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c0a</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>.\Release/ERMES.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/ERMES.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\Debug/ERMES.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\external_libraries;..\external_libraries\metis\include;..\external_libraries\gidpost;..\external_libraries\gidpost\win;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ERMES_USE_METIS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/ERMES.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ERMES_USE_METIS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c0a</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>.\Debug/ERMES.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/ERMES.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/ERMES.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Debug/ERMES.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm200  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\external_libraries;..\external_libraries\metis\include;..\external_libraries\gidpost;..\external_libraries\gidpost\win;..\external_libraries\flex++bison++;..\external_libraries\flex++bison++\flex_bison;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ERMES_USE_METIS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/ERMES.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>ERMES_USE_METIS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c0a</Culture>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/ERMES.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/ERMES.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\FarField_1eg_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\FarField_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\FarField_1st_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\FarField_2eg_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\FarField_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\FarField_3sb_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\FarField_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\JSource_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\JSource_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\JSource_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\RWPortTE10_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\RWPortTE10_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\RWPortTE10_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_1eg_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_1eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_2eg_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_2eg_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_3sb_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_3sb_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_1st_ColdPlasma.cpp" />
+    <ClCompile Include="..\external_libraries\gidpost\source\gidpost.cpp" />
+    <ClCompile Include="..\external_libraries\gidpost\source\gidpostInt.cpp" />
+    <ClCompile Include="..\external_libraries\gidpost\source\zlibint1.c" />
+    <ClCompile Include="..\external_libraries\gidpost\source\zlibint2.c" />
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\FarField_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\FarField_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\FarField_2nd_ColdPlasma.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_1st_Electrostatic.cpp" />
+    <ClCompile Include="..\ERMES\GenericRobin_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\JSource_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\JSource_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\RWPortTE10_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\RWPortTE10_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\Utils\GaussIntegrationTables.cpp" />
+    <ClCompile Include="..\ERMES\Utils\LagrangeBases.cpp" />
+    <ClCompile Include="..\ERMES\Utils\MatrixFileWritting.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_1st_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_1st_Electrostatic.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_2nd_FullWave.cpp" />
+    <ClCompile Include="..\ERMES\VolumeElement_2nd_ColdPlasma.cpp" />
+    <ClCompile Include="..\linear_solvers\bicg_complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\bicg_cp_complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\complex_matrix_operations.cpp" />
+    <ClCompile Include="..\linear_solvers\complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\qmr_complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\qmr_cp_complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\direct_complex_solver.cpp" />
+    <ClCompile Include="..\linear_solvers\multifrontal_complex_solver.cpp" />
+    <ClCompile Include="..\sources\dof.cpp" />
+    <ClCompile Include="..\sources\gid_output.cpp" />
+    <ClCompile Include="..\sources\input_c_parser.cpp" />
+    <ClCompile Include="..\sources\input_c_scanner.cpp" />
+    <ClCompile Include="..\sources\kernel.cpp" />
+    <ClCompile Include="..\sources\main.cpp" />
+    <ClCompile Include="..\sources\model.cpp" />
+    <ClCompile Include="..\sources\modeler.cpp" />
+    <ClCompile Include="..\sources\point_data.cpp" />
+    <ClCompile Include="..\sources\process.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\FarField_1eg_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\FarField_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\FarField_1st_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\FarField_2eg_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\FarField_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\FarField_3sb_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\FarField_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\JSource_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\JSource_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\JSource_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\RWPortTE10_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\RWPortTE10_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\RWPortTE10_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_1eg_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_1eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_2eg_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_2eg_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_3sb_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_3sb_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_1st_ColdPlasma.h" />
+    <ClInclude Include="..\external_libraries\dirent\include\dirent.h" />
+    <ClInclude Include="..\external_libraries\gidpost\source\gidpost.h" />
+    <ClInclude Include="..\external_libraries\gidpost\source\gidpostInt.h" />
+    <ClInclude Include="..\external_libraries\gidpost\source\zlib.h" />
+    <ClInclude Include="..\external_libraries\gidpost\source\zlibint1.h" />
+    <ClInclude Include="..\external_libraries\gidpost\source\zlibint2.h" />
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\FarField_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\FarField_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\FarField_2nd_ColdPlasma.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_1st_Electrostatic.h" />
+    <ClInclude Include="..\ERMES\GenericRobin_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\JSource_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\JSource_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\RWPortTE10_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\RWPortTE10_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\Utils\GaussIntegrationTables.h" />
+    <ClInclude Include="..\ERMES\Utils\LagrangeBases.h" />
+    <ClInclude Include="..\ERMES\Utils\MatrixFileWritting.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_1st_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_1st_Electrostatic.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_2nd_FullWave.h" />
+    <ClInclude Include="..\ERMES\VolumeElement_2nd_ColdPlasma.h" />
+    <ClInclude Include="..\includes\compare_pdof.h" />
+    <ClInclude Include="..\includes\constant_property.h" />
+    <ClInclude Include="..\includes\constant_source.h" />
+    <ClInclude Include="..\includes\csr_matrix.h" />
+    <ClInclude Include="..\includes\csr_space.h" />
+    <ClInclude Include="..\includes\define.h" />
+    <ClInclude Include="..\includes\dense_space.h" />
+    <ClInclude Include="..\includes\dof.h" />
+    <ClInclude Include="..\includes\element.h" />
+    <ClInclude Include="..\includes\element_sources.h" />
+    <ClInclude Include="..\includes\exception.h" />
+    <ClInclude Include="..\includes\geometry_function.h" />
+    <ClInclude Include="..\includes\gid_input.h" />
+    <ClInclude Include="..\includes\gid_output.h" />
+    <ClInclude Include="..\includes\input.h" />
+    <ClInclude Include="..\includes\input_c_parser.h" />
+    <ClInclude Include="..\includes\input_c_scanner.h" />
+    <ClInclude Include="..\includes\kernel.h" />
+    <ClInclude Include="..\includes\kratos_string.h" />
+    <ClInclude Include="..\includes\kratos_vectorial_spaces.h" />
+    <ClInclude Include="..\includes\matrix.h" />
+    <ClInclude Include="..\includes\model.h" />
+    <ClInclude Include="..\includes\modeler.h" />
+    <ClInclude Include="..\includes\model_geometry_container.h" />
+    <ClInclude Include="..\includes\model_properties.h" />
+    <ClInclude Include="..\includes\node.h" />
+    <ClInclude Include="..\includes\nodes_container.h" />
+    <ClInclude Include="..\includes\output.h" />
+    <ClInclude Include="..\includes\point.h" />
+    <ClInclude Include="..\includes\points_container.h" />
+    <ClInclude Include="..\includes\point_data.h" />
+    <ClInclude Include="..\includes\process.h" />
+    <ClInclude Include="..\includes\process_info.h" />
+    <ClInclude Include="..\includes\properties.h" />
+    <ClInclude Include="..\includes\properties_base.h" />
+    <ClInclude Include="..\includes\properties_default_function.h" />
+    <ClInclude Include="..\includes\property_function.h" />
+    <ClInclude Include="..\includes\results.h" />
+    <ClInclude Include="..\includes\solution_steps_data_container.h" />
+    <ClInclude Include="..\includes\solution_step_data.h" />
+    <ClInclude Include="..\includes\sources.h" />
+    <ClInclude Include="..\includes\sources_base.h" />
+    <ClInclude Include="..\includes\source_function.h" />
+    <ClInclude Include="..\includes\time_steps_container.h" />
+    <ClInclude Include="..\includes\update.h" />
+    <ClInclude Include="..\includes\variable.h" />
+    <ClInclude Include="..\includes\variables.h" />
+    <ClInclude Include="..\includes\variables_container.h" />
+    <ClInclude Include="..\includes\variables_container_base.h" />
+    <ClInclude Include="..\includes\vector.h" />
+    <ClInclude Include="..\linear_solvers\bicg_complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\bicg_cp_complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\complex_matrix_operations.h" />
+    <ClInclude Include="..\linear_solvers\complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\kratos_linear_solvers.h" />
+    <ClInclude Include="..\linear_solvers\qmr_complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\qmr_cp_complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\direct_complex_solver.h" />
+    <ClInclude Include="..\linear_solvers\multifrontal_complex_solver.h" />
+    <ClInclude Include="..\ERMES\Utils\PhysicalConstants.h" />
+  </ItemGroup>
+  <!-- METIS 5 and GKlib ( bundled sources, Apache-2.0, see external_libraries\metis and \GKlib ):
+       nested dissection ordering for the internal direct solver. Separate object folders because
+       both libraries contain a graph.c. -->
+  <ItemGroup>
+    <ClCompile Include="..\external_libraries\metis\libmetis\auxapi.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\balance.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\bucketsort.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\checkgraph.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\coarsen.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\compress.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\contig.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\debug.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\fm.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\fortran.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\frename.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\gklib.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\graph.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\initpart.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kmetis.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kwayfm.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kwayrefine.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mcutil.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mesh.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\meshpart.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\minconn.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mincover.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mmd.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\ometis.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\options.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\parmetis.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\pmetis.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\refine.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\separator.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\sfm.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\srefine.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\stat.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\timing.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\util.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\wspace.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)METIS\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\b64.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\blas.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\cache.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\csr.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\error.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\evaluate.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\fkvkselect.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\fs.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\getopt.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\gk_util.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\gkregex.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\graph.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\htable.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\io.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\itemsets.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\mcore.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\memory.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\pqueue.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\random.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\rw.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\seq.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\sort.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\string.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\timers.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\tokenizer.c">
+      <AdditionalIncludeDirectories>..\external_libraries\metis\include;..\external_libraries\GKlib\include;..\external_libraries\metis\libmetis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;MSC;_CRT_SECURE_NO_DEPRECATE;USE_GKREGEX;NDEBUG;NDEBUG2;__thread=__declspec(thread);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)GKlib\</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

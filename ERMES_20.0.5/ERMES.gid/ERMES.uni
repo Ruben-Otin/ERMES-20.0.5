@@ -1,0 +1,23 @@
+BEGIN TABLE
+length                                   : m       { reference, basic }
+mass                                     : kg      { reference, basic }
+time                                     : s       { reference, basic }
+temperature                              : Kel     { reference, basic }
+area                                     : m^2     { reference, basic }
+volume                                   : m^3     { reference, basic }
+mass density                             : kg*m^-3 { reference, basic }
+angle                                    : rad     { reference, basic }
+solid angle                              : sr      { reference, basic }
+force                                    : N       { reference, basic }
+energy                                   : J       { reference, basic }
+power                                    : W       { reference, basic }
+frequency                                : Hz      { reference, basic }
+electric field strength                  : V*m^-1  { reference, basic }
+magnetic field                           : A*m^-1  { reference, basic }
+magnetic flux density                    : T       { reference, basic }
+electric current                         : A       { reference, basic }
+electric current density                 : A*m^-2  { reference, basic }
+electric conductivity                    : S*m^-1  { reference, basic }
+electric charge                          : C       { reference, basic }
+electric charge density                  : C*m^-3  { reference, basic }
+END

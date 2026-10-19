@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ed5e7389-66f5-491f-b796-76d692de4966}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{19fa1dff-58c3-4cfd-b972-ec58242084eb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Containers">
+      <UniqueIdentifier>{2cefe7e7-730b-4cbc-b159-50d5c3738a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Variables">
+      <UniqueIdentifier>{964fdc63-04a7-4fdc-91e9-4cc4a65e2ef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\InOut">
+      <UniqueIdentifier>{c9a080f2-3ece-4072-8e0b-e24fbfce56d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BasicObjects">
+      <UniqueIdentifier>{9e3ec655-0900-4c8e-bedc-bbc6ef1b7451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Kernel">
+      <UniqueIdentifier>{c2539ae0-74f5-462d-b25c-a6645137ca67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Stuff">
+      <UniqueIdentifier>{65fde820-13a9-46cf-af23-3b6d25563bbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LinearSolvers">
+      <UniqueIdentifier>{cdee02b9-4f7f-469d-931b-5ea2b5081e8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES">
+      <UniqueIdentifier>{68a985b8-5897-4fff-ae0b-caa47f5a2c63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\Utils">
+      <UniqueIdentifier>{3d3749b9-cf08-4501-9c42-00119fa42d1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External_Libraries">
+      <UniqueIdentifier>{5defd518-a97f-4b99-844b-4f7f7c9cf452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\VectorialSpaces">
+      <UniqueIdentifier>{ae2f4bf4-91a2-4342-a080-8a2e8e58ac5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave">
+      <UniqueIdentifier>{b1906d2d-07bf-40f4-a7d4-6c3ca3e3c197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave\RME-1st">
+      <UniqueIdentifier>{ead4978b-ec36-4c6f-b7b2-8d2244cd1ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\Electrostatic">
+      <UniqueIdentifier>{70592932-a83f-4fec-8829-2af8b4463581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave\LL2P-3sb">
+      <UniqueIdentifier>{415c33b1-b490-4789-ae24-aa4388d77b3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma">
+      <UniqueIdentifier>{2dfbd0e0-7c34-4782-b306-93e8133d2d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma\RME-1st">
+      <UniqueIdentifier>{467719d6-20dc-45cd-aee5-395335d44311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma\LL2P-3sb">
+      <UniqueIdentifier>{bb73fc09-7775-4a1e-a4ca-b67a6ff49886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave\RME-2nd">
+      <UniqueIdentifier>{f6962477-bdd6-4c22-a010-1ab694bfabda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma\RME-2nd">
+      <UniqueIdentifier>{cd0ef111-4ceb-4aae-9d95-610b1efccfac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave\EDG-1st">
+      <UniqueIdentifier>{5ed23192-2c41-41de-96d6-a88479a8289e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma\EDG-1st">
+      <UniqueIdentifier>{dfacf097-3d15-4c56-bcd5-85d82aac23ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\FullWave\EDG-2nd">
+      <UniqueIdentifier>{c2afd103-61d8-4458-afe6-61d907fcc073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ERMES\ColdPlasma\EDG-2nd">
+      <UniqueIdentifier>{9a59ef2a-2d71-472b-a270-88d50cc90c9a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sources\dof.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\gid_output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\input_c_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\input_c_scanner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\kernel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\modeler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\point_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\process.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\Utils\GaussIntegrationTables.cpp">
+      <Filter>ERMES\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\Utils\LagrangeBases.cpp">
+      <Filter>ERMES\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\Utils\MatrixFileWritting.cpp">
+      <Filter>ERMES\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\gidpost\source\gidpost.cpp">
+      <Filter>External_Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\gidpost\source\gidpostInt.cpp">
+      <Filter>External_Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\gidpost\source\zlibint1.c">
+      <Filter>External_Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\gidpost\source\zlibint2.c">
+      <Filter>External_Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\bicg_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\bicg_cp_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\complex_matrix_operations.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\qmr_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\qmr_cp_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\direct_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\linear_solvers\multifrontal_complex_solver.cpp">
+      <Filter>LinearSolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sources\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_1st_Electrostatic.cpp">
+      <Filter>ERMES\Electrostatic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_1st_Electrostatic.cpp">
+      <Filter>ERMES\Electrostatic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_2nd_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_2nd_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_1st_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_1st_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\JSource_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\RWPortTE10_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\RWPortTE10_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\JSource_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_2nd_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\JSource_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_1st_FullWave.cpp">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\RWPortTE10_3sb_FullWave.cpp">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_3sb_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_3sb_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\LL2P-3sb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\JSource_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_1eg_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_1eg_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\RWPortTE10_1eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\JSource_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\CoaxialPortTEM_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\RWPortTE10_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\GenericRobin_2eg_FullWave.cpp">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\VolumeElement_2eg_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\EDG-2nd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ERMES\FarField_2eg_ColdPlasma.cpp">
+      <Filter>ERMES\ColdPlasma\EDG-2nd</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\model_geometry_container.h">
+      <Filter>Header Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\nodes_container.h">
+      <Filter>Header Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\points_container.h">
+      <Filter>Header Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\solution_steps_data_container.h">
+      <Filter>Header Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\time_steps_container.h">
+      <Filter>Header Files\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\variable.h">
+      <Filter>Header Files\Variables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\variables.h">
+      <Filter>Header Files\Variables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\variables_container.h">
+      <Filter>Header Files\Variables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\variables_container_base.h">
+      <Filter>Header Files\Variables</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\gid_input.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\gid_output.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\input.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\input_c_parser.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\input_c_scanner.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\output.h">
+      <Filter>Header Files\InOut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\dof.h">
+      <Filter>Header Files\BasicObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\node.h">
+      <Filter>Header Files\BasicObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\point.h">
+      <Filter>Header Files\BasicObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\point_data.h">
+      <Filter>Header Files\BasicObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\element.h">
+      <Filter>Header Files\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\kernel.h">
+      <Filter>Header Files\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\model.h">
+      <Filter>Header Files\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\modeler.h">
+      <Filter>Header Files\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\compare_pdof.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\constant_property.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\constant_source.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\define.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\element_sources.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\exception.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\geometry_function.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\kratos_string.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\model_properties.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\process.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\process_info.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\properties.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\properties_base.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\properties_default_function.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\property_function.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\results.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\solution_step_data.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\source_function.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\sources.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\sources_base.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\update.h">
+      <Filter>Header Files\Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\kratos_linear_solvers.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\Utils\GaussIntegrationTables.h">
+      <Filter>ERMES\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\Utils\PhysicalConstants.h">
+      <Filter>ERMES\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\Utils\LagrangeBases.h">
+      <Filter>ERMES\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\Utils\MatrixFileWritting.h">
+      <Filter>ERMES\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\gidpost\source\gidpost.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\gidpost\source\gidpostInt.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\gidpost\source\zlib.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\gidpost\source\zlibint1.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\gidpost\source\zlibint2.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\qmr_cp_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\direct_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\multifrontal_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\bicg_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\bicg_cp_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\complex_matrix_operations.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\linear_solvers\qmr_complex_solver.h">
+      <Filter>LinearSolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\csr_matrix.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\csr_space.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\dense_space.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\matrix.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\vector.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\includes\kratos_vectorial_spaces.h">
+      <Filter>Header Files\VectorialSpaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external_libraries\dirent\include\dirent.h">
+      <Filter>External_Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_1st_Electrostatic.h">
+      <Filter>ERMES\Electrostatic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_1st_Electrostatic.h">
+      <Filter>ERMES\Electrostatic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_2nd_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_2nd_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_1st_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_1st_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\JSource_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\RWPortTE10_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\RWPortTE10_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\JSource_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_2nd_FullWave.h">
+      <Filter>ERMES\FullWave\RME-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\JSource_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_1st_FullWave.h">
+      <Filter>ERMES\FullWave\RME-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\RWPortTE10_3sb_FullWave.h">
+      <Filter>ERMES\FullWave\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_3sb_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_3sb_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\LL2P-3sb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\JSource_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_1eg_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_1eg_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\RWPortTE10_1eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-1st</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\JSource_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\CoaxialPortTEM_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\RWPortTE10_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\GenericRobin_2eg_FullWave.h">
+      <Filter>ERMES\FullWave\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\VolumeElement_2eg_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\EDG-2nd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ERMES\FarField_2eg_ColdPlasma.h">
+      <Filter>ERMES\ColdPlasma\EDG-2nd</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="METIS">
+      <UniqueIdentifier>{0cc36d98-d0da-44ae-bd70-5c1189f2e82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GKlib">
+      <UniqueIdentifier>{c8efdb1a-02c9-4b32-ae20-0084d81100d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\external_libraries\metis\libmetis\auxapi.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\balance.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\bucketsort.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\checkgraph.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\coarsen.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\compress.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\contig.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\debug.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\fm.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\fortran.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\frename.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\gklib.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\graph.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\initpart.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kmetis.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kwayfm.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\kwayrefine.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mcutil.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mesh.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\meshpart.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\minconn.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mincover.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\mmd.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\ometis.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\options.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\parmetis.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\pmetis.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\refine.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\separator.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\sfm.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\srefine.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\stat.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\timing.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\util.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\metis\libmetis\wspace.c">
+      <Filter>METIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\b64.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\blas.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\cache.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\csr.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\error.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\evaluate.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\fkvkselect.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\fs.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\getopt.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\gk_util.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\gkregex.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\graph.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\htable.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\io.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\itemsets.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\mcore.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\memory.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\pqueue.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\random.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\rw.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\seq.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\sort.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\string.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\timers.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external_libraries\GKlib\src\tokenizer.c">
+      <Filter>GKlib</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
