@@ -1,0 +1,88 @@
+************************************************************************************
+* ERMES 20.0.5 - Release notes ( changes with respect to ERMES 20.0.4 )
+************************************************************************************
+* Ruben Otin - United Kingdom Atomic Energy Authority (UKAEA) - ruben.otin@ukaea.uk
+************************************************************************************
+
+The detailed, file-by-file list of changes is in ERMES_CPP_20.0.5/CHANGES.md.
+
+------------------------------------------------------------------------------------
+1. IMPORTANT: changes that modify results
+------------------------------------------------------------------------------------
+
+- Gaussian beam source: the amplitude normalization is now the correct one for a 3D
+  beam ( square root; 20.0.4 used a fourth root, which overestimated the field away
+  from the waist by sqrt( w / w0 ) ). Manual equation (3.11) corrected.
+
+  2D models ( geometry invariant in one direction, e.g. thin slabs ): set the waist
+  radius of the invariant direction to a very large value ( e.g. 1e3 ). The beam is then
+  exactly the 2D Gaussian beam and |E| at the waist equals the "GB module" input.
+  ( 20.0.4 gave the 2D result only for equal radii, by coincidence. ) If the beam does
+  not travel in the plane of the slab, the model cannot be 2D.
+
+- Gaussian beam and plane wave sources in nodal elements ( 1st, 2nd, 3sb ) are evaluated
+  at Gauss points ( as in edge elements ): more accurate on coarse meshes.
+
+- Cold plasma:
+    * Hermitian storages ( Herm-Full, Herm-Symm ) were wrong with damping; ERMES now
+      switches to Full_matrix automatically when damping is active.
+    * 1D B-field files may use a grid different from the density file ( before, B was
+      read on the density grid ).
+    * CODATA 2018 constants; ion masses without the removed electrons ( ~0.05 % for H+ ).
+
+- permittivity_tensor.py ( Utilities ): off-diagonal sign of the Stix tensor corrected
+  ( it corresponded to a reversed B ). Regenerate old Tensor_K_CPGE.bin files.
+
+------------------------------------------------------------------------------------
+2. New features
+------------------------------------------------------------------------------------
+
+- "Direct_solver": internal sparse direct solver ( multifrontal LDL^T / LU, OpenMP ),
+  with METIS ordering when available, equilibration, pivoting and GMRES. Robust for
+  ill-conditioned problems ( resonances, low losses, low frequency A-V formulations ).
+  Example ( Windows, 16 threads, n = 165 856 ): 62 s, relative residual 8e-13.
+  It prints the predicted memory and stops if the problem does not fit in memory.
+  It uses METIS nested dissection ordering ( included ), which reduces work and memory
+  of large 3D problems a lot.
+  Environment variables: ERMES_SOLVER=Direct ( force it ), ERMES_ORDERING=AMD ( no METIS ).
+
+- ERMES prints its version: first line of the .info file, and "ERMES --version".
+
+- Non-zero exit status on error ( for scripts and SLURM "--dependency=afterok" ); error
+  messages are also written to stderr.
+
+- METIS ordering for the direct solver: bundled with the source code and compiled
+  automatically ( Windows and Linux ), nothing to install. See
+  ERMES_CPP_20.0.5/external_libraries/README_METIS.txt.
+
+------------------------------------------------------------------------------------
+3. Robustness and performance
+------------------------------------------------------------------------------------
+
+- Iterative solvers: a NaN/Inf breakdown is reported as such ( it was reported as
+  "CONVERGENCE ACHIEVED" ) and stops ERMES; warning when the true residual is much larger
+  than the solver estimation. Faster, parallel matrix-vector and vector operations.
+- External solvers: a missing or incomplete solution file stops ERMES with an error ( it
+  wrote a zero or old solution ); old system files are removed before each run.
+- Input checks with clear messages ( plasma profiles, node ids, missing files ); plasma
+  file paths may contain spaces.
+- Periodic boundary conditions: unmatched nodes are detected.
+- Many fixes of undefined behaviour and portability ( see CHANGES.md ).
+
+------------------------------------------------------------------------------------
+4. Installation and compatibility
+------------------------------------------------------------------------------------
+
+- Installation unchanged: copy the ERMES_20.0.5 folder into GiD's "problemtypes" folder.
+- Linux executable: execs/unix/ERMES_20.0.5, static, runs on any x86-64 Linux ( no
+  libraries needed ), METIS included. Third-party licenses: execs/licenses/. 
+  If it loses its execute permission when unzipped, ERMES.unix.bat restores it.
+- Windows executable: execs/win/ERMES_20.0.5.exe with vcomp140.dll ( OpenMP runtime of
+  Visual C++ ) in the same folder.
+- Source code: Boost is no longer needed; C++11 to C++17 compilers ( GCC >= 5, Visual
+  Studio 2022 ). New Linux Makefile ( make, make STATIC=1, make test ).
+- Utilities: batch scripts fixed ( line endings, exit status, PETSc script name ), NumPy
+  external solvers detect the matrix format, problem_generator.py reports ERMES errors.
+  Plasma_Scripts reorganized ( new EQDSK -> ERMES generators with optional turbulence,
+  z as tokamak axis, Direct_solver option in problem_generator.py; see
+  Plasma_Scripts/README.md ). Section 11 of Utilities/README.txt has the details.
