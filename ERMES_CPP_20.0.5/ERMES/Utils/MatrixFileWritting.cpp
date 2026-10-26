@@ -299,7 +299,9 @@ namespace Kratos
 
 		String info;
 
-		for( infoSolverFile >> info; !infoSolverFile.eof(); infoSolverFile >> info )
+		// Loop on the extraction itself: testing eof() after the extraction drops the last token
+		// when the file does not end with a newline.
+		while( infoSolverFile >> info )
         {
 			if( info != "ENDL" ) 
             {
@@ -327,7 +329,9 @@ namespace Kratos
 
 		String path;
 
-		for( pathFile >> path; !pathFile.eof(); pathFile >> path )
+		// Loop on the extraction itself: testing eof() after the extraction drops the last token
+		// when the file does not end with a newline ( e.g. "bash script.sh" became "bash" ).
+		while( pathFile >> path )
 		{
 			ExternalPath << path << " ";
 		}

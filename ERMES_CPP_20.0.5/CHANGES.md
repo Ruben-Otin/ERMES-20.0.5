@@ -6,6 +6,13 @@ Every modified spot carries a comment in the code explaining what changed and wh
 
 ## 1. Bug fixes
 
+### External solver command (`ERMES/Utils/MatrixFileWritting.cpp`, `ERMES.gid/14-External_Solver.bas`)
+- The `-14.dat` reader looped with `for( f >> s; !f.eof(); f >> s )`, which drops the last
+  token when the file does not end with a newline. GiD writes `-14.dat` without one, so
+  `bash ./Scripts/PETSc/ERMES2PETSc.sh` was executed as `bash` alone: bash exited at once
+  with status 0 and no `Vector_Xo.bin` was written. Now `while( f >> s )`. Same fix in
+  `ReadInfoSolverFromFile`. The `.bas` template also ends with a newline now.
+
 ### Gaussian beam source (`ERMES/GenericRobin_{1st,2nd,3sb,1eg,2eg}_FullWave.cpp`)
 - **[results change]** Amplitude normalization was a fourth root; correct is
   `sqrt( zR_pol zR_per / (|q_pol||q_per|) )`. The old code overdrove ports placed away
