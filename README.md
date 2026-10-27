@@ -567,7 +567,7 @@ POSSIBILITY OF SUCH DAMAGE.
 Earlier ERMES versions, including their executables, manuals and examples, remain available at:
 
 - 🌐 [Ruben Otin software page ( blog )](https://ruben-otin.blogspot.com/2015/04/ruben-otin-software-ruben-otin-april-19.html)
-- 📁 [ERMES versions archive ( Google Drive )](https://drive.google.com/drive/folders/1Gipqbgu3bHuv8TdSJd-eZ2W2nOFT75kS)
+- 📁 [ERMES versions archive ( Google Drive )](https://drive.google.com/drive/folders/0B4Eur-MHBhw2YmlBT09zS0dLMXM?resourcekey=0-xwhSnDlhCBL5xxvL0UvPIw&usp=sharing)
 
 ---
 
