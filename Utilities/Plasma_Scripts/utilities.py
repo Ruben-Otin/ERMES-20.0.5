@@ -423,9 +423,9 @@ def Write_GiD_bch_File_2D(GiDFileName,
     File.write('%.6f,%.6f,%.6f \n' % (P1[0],P1[1],P1[2]));
     File.write('escape escape \n\n');
 
-    ## Add in Linux
-    # File.write('Mescape Geometry Create Line Join 1 5 \n');
-    # File.write('escape escape \n\n');
+    # Needed in GiD Linux
+    File.write('Mescape Geometry Create Line Join 1 5 \n');
+    File.write('escape escape \n\n');
 
     File.write('Mescape Utilities Collapse model Yes \n');
     File.write('Mescape Utilities Repair Yes \n\n');
